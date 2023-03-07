@@ -1,0 +1,519 @@
+openapi: 3.0.3
+info:
+  title: Laravel
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://localhost'
+paths:
+  /api/fiches:
+    post:
+      summary: 'Store a newly created Fiche in storage.'
+      operationId: storeANewlyCreatedFicheInStorage
+      description: 'POST /fiches'
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+  '/api/fiches/{id}':
+    put:
+      summary: 'Update the specified Fiche in storage.'
+      operationId: updateTheSpecifiedFicheInStorage
+      description: 'PUT/PATCH /fiches/{id}'
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    delete:
+      summary: 'Remove the specified Fiche from storage.'
+      operationId: removeTheSpecifiedFicheFromStorage
+      description: 'DELETE /fiches/{id}'
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the fich.'
+        example: necessitatibus
+        required: true
+        schema:
+          type: string
+  /api/portfolios:
+    post:
+      summary: 'Store a newly created portfolio in storage.'
+      operationId: storeANewlyCreatedPortfolioInStorage
+      description: 'POST /portfolios'
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+  '/api/portfolios/{id}':
+    put:
+      summary: 'Update the specified portfolio in storage.'
+      operationId: updateTheSpecifiedPortfolioInStorage
+      description: 'PUT/PATCH /portfolios/{id}'
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    delete:
+      summary: 'Remove the specified portfolio from storage.'
+      operationId: removeTheSpecifiedPortfolioFromStorage
+      description: 'DELETE /portfolios/{id}'
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the portfolio.'
+        example: 11
+        required: true
+        schema:
+          type: integer
+  /api/cmk:
+    post:
+      summary: 'Store a newly created CMK in storage.'
+      operationId: storeANewlyCreatedCMKInStorage
+      description: 'POST /c-m-k-s'
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                CMK_ID:
+                  type: string
+                  description: ''
+                  example: reiciendis
+              required:
+                - CMK_ID
+      security: []
+  '/api/cmk/{id}':
+    put:
+      summary: 'Update the specified CMK in storage.'
+      operationId: updateTheSpecifiedCMKInStorage
+      description: 'PUT/PATCH /c-m-k-s/{id}'
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                CMK_ID:
+                  type: string
+                  description: ''
+                  example: eum
+              required:
+                - CMK_ID
+      security: []
+    delete:
+      summary: 'Remove the specified CMK from storage.'
+      operationId: removeTheSpecifiedCMKFromStorage
+      description: 'DELETE /c-m-k-s/{id}'
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the cmk.'
+        example: 18
+        required: true
+        schema:
+          type: integer
+  /api/connexions:
+    post:
+      summary: 'Store a newly created Connexion in storage.'
+      operationId: storeANewlyCreatedConnexionInStorage
+      description: 'POST /connexions'
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+  '/api/connexions/{id}':
+    put:
+      summary: 'Update the specified Connexion in storage.'
+      operationId: updateTheSpecifiedConnexionInStorage
+      description: 'PUT/PATCH /connexions/{id}'
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    delete:
+      summary: 'Remove the specified Connexion from storage.'
+      operationId: removeTheSpecifiedConnexionFromStorage
+      description: 'DELETE /connexions/{id}'
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the connexion.'
+        example: 16
+        required: true
+        schema:
+          type: integer
+  /api/contacts:
+    post:
+      summary: 'Store a newly created Contact in storage.'
+      operationId: storeANewlyCreatedContactInStorage
+      description: 'POST /contacts'
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+  '/api/contacts/{id}':
+    put:
+      summary: 'Update the specified Contact in storage.'
+      operationId: updateTheSpecifiedContactInStorage
+      description: 'PUT/PATCH /contacts/{id}'
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    delete:
+      summary: 'Remove the specified Contact from storage.'
+      operationId: removeTheSpecifiedContactFromStorage
+      description: 'DELETE /contacts/{id}'
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the contact.'
+        example: 8
+        required: true
+        schema:
+          type: integer
+  /api/fichiers:
+    post:
+      summary: 'Store a newly created Fichier in storage.'
+      operationId: storeANewlyCreatedFichierInStorage
+      description: 'POST /fichiers'
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+  '/api/fichiers/{id}':
+    put:
+      summary: 'Update the specified Fichier in storage.'
+      operationId: updateTheSpecifiedFichierInStorage
+      description: 'PUT/PATCH /fichiers/{id}'
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    delete:
+      summary: 'Remove the specified Fichier from storage.'
+      operationId: removeTheSpecifiedFichierFromStorage
+      description: 'DELETE /fichiers/{id}'
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the fichier.'
+        example: 13
+        required: true
+        schema:
+          type: integer
+tags:
+  -
+    name: Endpoints
+    description: ''
