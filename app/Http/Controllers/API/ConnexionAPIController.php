@@ -22,6 +22,8 @@ class ConnexionAPIController extends AppBaseController
         $this->connexionRepository = $connexionRepo;
     }
 
+
+    
     /**
      * Display a listing of the Connexions.
      * GET|HEAD /connexions

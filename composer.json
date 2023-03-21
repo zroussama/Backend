@@ -6,18 +6,19 @@
     "license": "MIT",
     "require": {
         "php": "^8.0.2",
+        "darkaonline/l5-swagger": "8.*",
         "doctrine/dbal": "~2.3",
         "encore/laravel-admin": "^1.8",
         "guzzlehttp/guzzle": "^7.2",
         "infyomlabs/adminlte-templates": "^5.0",
         "infyomlabs/laravel-generator": "^5.0",
         "infyomlabs/laravel-ui-adminlte": "^5.1",
+        "infyomlabs/swagger-generator": "^3.0",
         "jeroennoten/laravel-adminlte": "^3.8",
         "laravel/framework": "^9.19",
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",
-        "darkaonline/l5-swagger": "8.*",
-        "infyomlabs/swagger-generator": "^3.0"
+        "laravel/ui": "^3.4"
     },
     "require-dev": {
         "brianium/paratest": "^6.9",
