@@ -110,4 +110,14 @@ class portfolioAPIController extends AppBaseController
 
         return $this->sendSuccess('Portfolio deleted successfully');
     }
+
+    // Affectation fichier à une fiche : 
+    public function ajouterFichierAuPortfolio($portfolioId, $fichierId)
+    {
+        // Appeler le service d'affectation de fichier pour affecter le fichier au portfolio
+        $this->fichierService->affecterFichier($portfolioId, $fichierId);
+
+        // Retourner une réponse appropriée
+        return response()->json(['message' => 'Le fichier a été ajouté au portfolio avec succès']);
+    }
 }

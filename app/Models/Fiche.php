@@ -6,6 +6,34 @@ use Illuminate\Database\Eloquent\Model;
 
 class Fiche extends Model
 {
+            // ------------------------------------------------------------
+    /**
+     *    ___                  _    
+     *   / __| ___ __ _ _ _ __| |_  
+     *   \__ \/ -_) _` | '_/ _| ' \ 
+     *   |___/\___\__,_|_| \__|_||_|
+     *                       
+     */
+    public static function rechercher(Request $request)
+    {
+        $query = self::query();
+    
+        foreach ($request->all() as $key => $value) {
+            if (!empty($value)) {
+                $query->where($key, 'LIKE', '%'.$value.'%');
+            }
+        }
+    
+        return $query->get();
+    }
+            // ------------------------------------------------------------
+    /**
+    *      ___     _      _   _          
+    *     | _ \___| |__ _| |_(_)___ _ _  
+    *     |   / -_) / _` |  _| / _ \ ' \ 
+    *     |_|_\___|_\__,_|\__|_\___/_||_|
+    */
+                                   
     //Relation entre Fiche et Contact ||   1 Fiche --> n contact  
     public function contacts()
     {
@@ -24,6 +52,14 @@ class Fiche extends Model
         return $this->hasOne('App\Models\Connexion');
     }
 
+            // ------------------------------------------------------------
+    /**
+     *        _  _   _       _ _         _      
+     *       /_\| |_| |_ _ _(_) |__ _  _| |_ ___
+     *      / _ \  _|  _| '_| | '_ \ || |  _(_-<
+     *     /_/ \_\__|\__|_| |_|_.__/\_,_|\__/__/                              
+     * 
+     */
     
 
     // Colonnes Fiches
@@ -72,7 +108,24 @@ class Fiche extends Model
     ];
 
     public static array $rules = [
-        
+        'entreprise' => 'required',
+        'domaine_activite' => 'required',
+        'gerant_nom' => 'required',
+        'gerant_prenom' => 'required',
+        'gerant_tel' => 'required',
+        'gerant_email' => 'required',
+        'autre_nom' => 'required',
+        'autre_prenom' => 'required',
+        'autre_tel' => 'required',
+        'autre_email' => 'required',
+        'autre_fonction' => 'required',
+        'Pays_Origine' => 'required',
+        'Ville_Origine' => 'required',
+        'Prod_pays' => 'required',
+        'prod_ville' => 'required',
+        'Prod_adress' => 'required',
+        'Origin_adress' => 'required',
+        'logo' => 'required'
     ];
 
     
