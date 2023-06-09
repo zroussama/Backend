@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
@@ -27,15 +28,16 @@ return new class extends Migration
            // ->references('id')->on('connexions')
            // ->onDelete('cascade');
 
-            //Relation entre Fiche et Contact ||   1 Fiche --> n contact    
+            //Relation entre Fiche et Contact ||   1 Fiche --> n contact
             //$table->integer('connexion_id')->default(DB::raw('id'))->primary();
-            $table->unsignedBigInteger('fiche_id')->default(DB::raw('id'))->primary();
-            $table->foreign('fiche_id')->references('id')->on('fiches');
+            // $table->unsignedBigInteger('fiche_id')->default(DB::raw('id'))->primary();
+            // $table->foreign('fiche_id')->references('id')->on('fiches');
 
-        
-          
+
+
             //Table Fiche
-            $table->id('id');
+            $table->bigIncrements('id');
+            $table->unsignedBigInteger('fiche_id')->default(0);
             $table->string('entreprise');
             $table->string('domaine_activite');
             $table->string('logo');

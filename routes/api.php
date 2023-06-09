@@ -30,7 +30,7 @@ Route::group(['prefix' => 'api'], function () {
 });
 
 Route::group(['prefix' => 'api'], function () {
-    Route::resource('connections', 'App\Http\Controllers\API\ConnectionAPIController')->middleware('auth:api');
+    Route::resource('connections', 'App\Http\Controllers\API\ConnectionAPIController')->middleware('auth:sanctum');
 });
 */
 
@@ -40,14 +40,14 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 /**
 Route::group(['prefix' => 'api'], function () {
-    Route::resource('connections', 'App\Http\Controllers\API\ConnectionAPIController')->middleware('auth:api');
+    Route::resource('connections', 'App\Http\Controllers\API\ConnectionAPIController')->middleware('auth:sanctum');
 });
 */
 
 Route::resource('fiches', App\Http\Controllers\API\FicheAPIController::class);
-    
 
-   
+
+
 
 Route::resource('portfolios', App\Http\Controllers\API\portfolioAPIController::class);
 
@@ -58,8 +58,8 @@ Route::resource('cmk', App\Http\Controllers\API\CMKAPIController::class);
 
 Route::resource('connexions', App\Http\Controllers\API\ConnexionAPIController::class);
 
-Route::resource('clients', App\Http\Controllers\API\ClientAPIController::class)
-    ->except(['create', 'edit']);
+Route::resource('clients', App\Http\Controllers\API\ClientAPIController::class);
+   // ->except(['create', 'edit']);
 
 Route::resource('contacts', App\Http\Controllers\API\ContactAPIController::class)
     ->except(['create', 'edit']);
