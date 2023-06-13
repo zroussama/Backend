@@ -3,9 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Client;
-use App\Http\Requests\StoreClientRequest;
 use App\Http\Requests\UpdateClientRequest;
-use Illuminate\Support\Facades\URL;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -13,7 +11,7 @@ class ClientController extends Controller
 {
     public function index()
     {
-        $clients = Client::all();
+        $clients = Client::paginate(5);
         return view('clients.index', compact('clients'));
     }
     public function create()

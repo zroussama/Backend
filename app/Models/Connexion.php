@@ -11,14 +11,14 @@ class Connexion extends Model
     {
         return $this->belongsTo('App\Models\Fiche');
     }
-    
+
     public $table = 'connexions';
 
     public $fillable = [
         'connexion_id',
-        'TYPE_HEBERGEMENT'=>'enum', 
-        'PROMISE_CASE'=>'enum', 
-        'STATUS'=>'enum', 
+        'TYPE_HEBERGEMENT',
+        'PROMISE_CASE',
+        'STATUS',
         'name',
         'domain',
         'port',
@@ -30,9 +30,9 @@ class Connexion extends Model
 
     protected $casts = [
         'connexion_id' => 'integer',
-        'TYPE_HEBERGEMENT'=>'enum', 
-        'PROMISE_CASE'=>'enum', 
-        'STATUS'=>'boolean', 
+        'TYPE_HEBERGEMENT',
+        'PROMISE_CASE',
+        'STATUS',
         'name' => 'string',
         'domain' => 'string',
         'port' => 'integer',
@@ -43,8 +43,8 @@ class Connexion extends Model
     ];
 
     public static array $rules = [
-        
+
     ];
 
-    
+
 }
