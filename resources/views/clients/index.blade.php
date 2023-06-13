@@ -6,7 +6,7 @@
                 <li class="inline-flex items-center">
                     <a href="/"
                         class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
-                        <svg class="mr-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20"
+                        <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20"
                             xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z">
@@ -50,10 +50,10 @@
         -->
     <script src="https://unpkg.com/tailwindcss-jit-cdn"></script>
     <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div class="block mb-8">
                 <a href="{{ route('clients.create') }}"
-                    class="text-primary hover:bg-primary border-primary inline-flex items-center justify-center rounded-full border bg-green py-3 px-6 text-center text-base font-medium hover:text-white">
+                    class="inline-flex items-center justify-center px-6 py-3 text-base font-medium text-center border rounded-full text-primary hover:bg-primary border-primary bg-green hover:text-white">
                     <span class="mr-[10px]">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                             width="20" height="20">
@@ -66,35 +66,40 @@
 
 
             </div>
+            <i class="fa-sharp fa-solid fa-circle" style="color: #2ed639;"></i>
             <div class="flex flex-col">
                 <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
-                    <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
-                        <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
-                            <table class="min-w-full divide-y divide-gray-200 w-full">
+                    <div class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
+                        <div class="overflow-hidden border-b border-gray-200 shadow sm:rounded-lg">
+                            <table class="w-full min-w-full divide-y divide-gray-200">
                                 <thead>
                                     <tr>
                                         <th scope="col" width="50"
-                                            class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                            class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase bg-gray-50">
                                             ID
                                         </th>
                                         <th scope="col"
-                                            class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                            class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase bg-gray-50">
                                             Entreprise
                                         </th>
+                                        <th scope="col" width="50"
+                                            class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase bg-gray-50">
+                                            état
+                                        </th>
                                         <th scope="col"
-                                            class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                            class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase bg-gray-50">
                                             Télephone
                                         </th>
                                         <th scope="col"
-                                            class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                            class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase bg-gray-50">
                                             Adresse
                                         </th>
                                         <th scope="col"
-                                            class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                            class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase bg-gray-50">
                                             Ville
                                         </th>
                                         <th scope="col"
-                                            class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                            class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase bg-gray-50">
                                             Pays
                                         </th>
                                         <th scope="col" class="px-6 py-3 bg-gray-50">
@@ -105,28 +110,45 @@
                                 <tbody class="bg-white divide-y divide-gray-200">
                                     @foreach ($clients as $client)
                                         <tr>
-                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                                            <td class="px-6 py-4 text-sm text-gray-900 whitespace-nowrap">
                                                 {{ $client->id }}
                                             </td>
 
-                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                                                {{ $client->ville }}
+                                            <td class="px-6 py-4 text-sm text-gray-900 whitespace-nowrap">
+                                                {{ $client->entreprise }}
+                                            </td>
+                                                {{-- Todo : modifier les icons de l'etats des clients --}}
+                                            <td class="px-6 py-4 text-sm text-gray-900 whitespace-nowrap">
+                                                <span class="
+                                                    inline-flex items-center justify-center h-6 w-6 rounded-full
+                                                    {{ $client->tag === 'normal' ? 'bg-green-500' : '' }}
+                                                    {{ $client->tag === 'solde' ? 'bg-purple-500' : '' }}
+                                                    {{ $client->tag === 'maintenance' ? 'bg-orange-500' : '' }}
+                                                    {{ $client->tag === 'arreter' ? 'bg-red-500' : '' }}
+                                                    {{ $client->tag === 'suspendu' ? 'bg-yellow-500' : '' }}
+                                                ">
+                                                    <svg class="w-4 h-4 fill-current " viewBox="0 0 20 20">
+                                                        <circle cx="10" cy="10" r="9"/>
+                                                    </svg>
+                                                </span>
+                                                <span class="ml-2"></span>
                                             </td>
 
-                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+
+                                            <td class="px-6 py-4 text-sm text-gray-900 whitespace-nowrap">
                                                 {{ $client->tel }}
                                             </td>
 
-                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                                            <td class="px-6 py-4 text-sm text-gray-900 whitespace-nowrap">
                                                 {{ $client->adresse }}
                                             </td>
 
-                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                                            <td class="px-6 py-4 text-sm text-gray-900 whitespace-nowrap">
                                                 {{ $client->ville }}
                                             </td>
 
 
-                                            <td class="px-2 py-1  w-12 h-10">
+                                            <td class="w-12 h-10 px-2 py-1">
 
                                                 <svg class="w-full h-full" viewBox="0 0 24 24">
                                                     @if ($client->pays == 'France')
@@ -146,20 +168,21 @@
 
                                             </td>
                                             <td
-                                                class="px-6 py-4 whitespace-nowrap text-sm font-medium flex items-center justify-center">
+                                                class="flex items-center justify-center px-6 py-4 text-sm font-medium whitespace-nowrap">
                                                 <a href="{{ route('clients.show', $client->id) }}"
-                                                    class="text-blue-600 hover:text-blue-900 mb-2 mr-2">
+                                                    class="mb-2 mr-2 text-blue-600 hover:text-blue-900">
                                                     Voir</a>
                                                 <a href="{{ route('clients.edit', $client->id) }}"
-                                                    class="text-indigo-600 hover:text-indigo-900 mb-2 mr-2">
+                                                    class="mb-2 mr-2 text-indigo-600 hover:text-indigo-900">
                                                     Modifier</a>
                                                 <form class="inline-block"
                                                     action="{{ route('clients.destroy', $client->id) }}" method="POST"
                                                     onsubmit="return confirm('Êtes-vous sûr/e?');">
                                                     <input type="hidden" name="_method" value="DELETE">
-                                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                                    <input type="hidden" name="_token"
+                                                        value="{{ csrf_token() }}">
                                                     <input type="submit"
-                                                        class="text-red-600 hover:text-red-900 mb-2 mr-2"
+                                                        class="mb-2 mr-2 text-red-600 hover:text-red-900"
                                                         value="Supprimer">
                                                 </form>
                                             </td>
@@ -170,12 +193,12 @@
                                     <tr>
                                         <td colspan="8">
                                             <div
-                                                class="flex-auto items-center justify-between border-t border-gray-200 bg-white px-4 py-3 sm:px-6">
-                                                <div class="flex flex-1 justify-between sm:hidden">
+                                                class="items-center justify-between flex-auto px-4 py-3 bg-white border-t border-gray-200 sm:px-6">
+                                                <div class="flex justify-between flex-1 sm:hidden">
                                                     <a href="{{ $clients->previousPageUrl() }}"
-                                                        class="relative inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50">Previous</a>
+                                                        class="relative inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50">Previous</a>
                                                     <a href="{{ $clients->nextPageUrl() }}"
-                                                        class="relative ml-3 inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50">Next</a>
+                                                        class="relative inline-flex items-center px-4 py-2 ml-3 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50">Next</a>
                                                 </div>
                                                 <div
                                                     class="hidden sm:flex sm:flex-1 sm:items-center sm:justify-between">
@@ -193,12 +216,12 @@
                                                         </p>
                                                     </div>
                                                     <div>
-                                                        <nav class="isolate inline-flex rounded-md shadow-sm"
+                                                        <nav class="inline-flex rounded-md shadow-sm isolate"
                                                             aria-label="Pagination">
                                                             <a href="{{ $clients->previousPageUrl() }}"
-                                                                class="relative inline-flex items-center rounded-l-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">
+                                                                class="relative inline-flex items-center px-2 py-2 text-gray-400 rounded-l-md ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">
                                                                 <span class="sr-only">Previous</span>
-                                                                <svg class="h-5 w-5" viewBox="0 0 20 20"
+                                                                <svg class="w-5 h-5" viewBox="0 0 20 20"
                                                                     fill="currentColor" aria-hidden="true">
                                                                     <path fill-rule="evenodd"
                                                                         d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z"
@@ -211,9 +234,9 @@
                                                                     class="relative inline-flex items-center {{ $loop->first ? 'bg-indigo-600 text-white focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600' : 'text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0' }}">{{ $client->id }}</a>
                                                             @endforeach
                                                             <a href="{{ $clients->nextPageUrl() }}"
-                                                                class="relative inline-flex items-center rounded-r-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">
+                                                                class="relative inline-flex items-center px-2 py-2 text-gray-400 rounded-r-md ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">
                                                                 <span class="sr-only">Next</span>
-                                                                <svg class="h-5 w-5" viewBox="0 0 20 20"
+                                                                <svg class="w-5 h-5" viewBox="0 0 20 20"
                                                                     fill="currentColor" aria-hidden="true">
                                                                     <path fill-rule="evenodd"
                                                                         d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
@@ -255,5 +278,14 @@
                     });
             });
         </script>
+         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+         <script>
+             $(document).ready(function() {
+                 $('.icon-table').hover(function() {
+                     var tag = $(this).data('tag');
+                     $(this).attr('title', tag);
+                 });
+             });
+         </script>
 
 </x-app-layout>

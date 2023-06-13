@@ -1,9 +1,7 @@
-@extends('layouts.app')
 
-@section('content')
     <section class="content-header">
         <div class="container-fluid">
-            <div class="row mb-2">
+            <div class="mb-2 row">
                 <div class="col-sm-12">
                     <h1>
                     Create Connexions
@@ -13,9 +11,9 @@
         </div>
     </section>
 
-    <div class="content px-3">
+    <div class="px-3 content">
 
-        @include('adminlte-templates::common.errors')
+
 
         <div class="card">
 
@@ -38,4 +36,3 @@
 
         </div>
     </div>
-@endsection

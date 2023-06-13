@@ -1,16 +1,12 @@
-@extends('layouts.app')
 
-@section('content')
+
+
     <section class="content-header">
         <div class="container-fluid">
-            <div class="row mb-2">
+            <div class="mb-2 row">
+
                 <div class="col-sm-6">
-                    <h1>
-                    @lang('models/connexions.singular') @lang('crud.detail')
-                    </h1>
-                </div>
-                <div class="col-sm-6">
-                    <a class="btn btn-default float-right"
+                    <a class="float-right btn btn-default"
                        href="{{ route('connexions.index') }}">
                                                     @lang('crud.back')
                                             </a>
@@ -19,7 +15,7 @@
         </div>
     </section>
 
-    <div class="content px-3">
+    <div class="px-3 content">
         <div class="card">
             <div class="card-body">
                 <div class="row">
@@ -28,4 +24,3 @@
             </div>
         </div>
     </div>
-@endsection
