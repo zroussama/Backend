@@ -4,13 +4,11 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PortfolioController;
-use App\Http\Controllers\PostController;
-use App\Http\Controllers\ConnexionController;
-use App\Http\Controllers\Admin\ArticlesController;
 use App\Http\Controllers\ClientController;
-use App\Models\Client;
-use Illuminate\Http\Request;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\SearchController;
+
+
 
 
 Route::get('/', function () {
@@ -23,8 +21,8 @@ Route::resource('users', UserController::class);
 // Route::resource('connections', App\Http\Controllers\ConnectionController::class);
 // Route::resource('fiches', App\Http\Controllers\FicheController::class);
 // Route::resource('portfolios', App\Http\Controllers\portfolioController::class);
-
 // Route::resource('c-m-k-s', App\Http\Controllers\CMKController::class);
+
 
 Route::resource('connexions', App\Http\Controllers\ConnexionController::class);
 
@@ -38,20 +36,18 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 
-    Route::get('/portfolio', function () {
-        return view('portfolio');
-    })->name('portfolio');
-    Route::post('/portfolios', [PortfolioController::class, 'store'])->name('portfolios.store');
-    Route::get('/portfolios', [PortfolioController::class, 'index'])->name('portfolios.index');
-    Route::get('/portfolios/create', [PortfolioController::class, 'create'])->name('portfolios.create');
-    Route::delete('/portfolios/{id}', [PortfolioController::class, 'destroy'])->name('portfolios.destroy');
 
+    Route::resource('portfolios', PortfolioController::class)->except(['show']);
+    Route::get('/portfolios/{portfolio}', [PortfolioController::class, 'show'])->name('portfolios.show');
+    Route::resource('contacts', ContactController::class)->except(['show']);
+    Route::get('/contacts/{contact}', [ContactController::class, 'show'])->name('contacts.show');
     Route::resource('clients', ClientController::class);
     Route::post('/clients', 'ClientController@store')->name('clients.store');
     Route::get('/clients/{client}', [ClientController::class, 'show'])->name('clients.show');
-
     Route::get('/search', [SearchController::class, 'search'])->name('search');
+
 });
+
 
 //Route::resource('clients',App\Http\Controllers\ClientController::class);
 

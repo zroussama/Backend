@@ -81,14 +81,14 @@ class portfolioController extends AppBaseController
      *
      * @throws \Exception
      */
-    public function destroy($id)
+    public function destroy($idPortfolio)
     {
-        $portfolio = $this->portfolioRepository->find($id);
+        $portfolio = $this->portfolioRepository->find($idPortfolio);
 
         if (empty($portfolio)) {
             return redirect(route('portfolios.index'));
         }
-        $this->portfolioRepository->delete($id);
+        $this->portfolioRepository->delete($idPortfolio);
         return redirect(route('portfolios.index'));
     }
 

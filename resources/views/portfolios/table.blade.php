@@ -18,13 +18,13 @@
                     <td>{{ $portfolio->kbis }}</td>
                     <td>{{ $portfolio->autre_fichier }}</td>
                     <td  style="width: 120px">
-                        {!! Form::open(['route' => ['portfolios.destroy', $portfolio->id], 'method' => 'delete']) !!}
+                        {!! Form::open(['route' => ['portfolios.destroy', $portfolio->idPortfolio], 'method' => 'delete']) !!}
                         <div class='btn-group'>
-                            <a href="{{ route('portfolios.show', [$portfolio->id]) }}"
+                            <a href="{{ route('portfolios.show', [$portfolio->idPortfolio]) }}"
                                class='btn btn-default btn-xs'>
                                 <i class="far fa-eye"></i>
                             </a>
-                            <a href="{{ route('portfolios.edit', [$portfolio->id]) }}"
+                            <a href="{{ route('portfolios.edit', [$portfolio->idPortfolio]) }}"
                                class='btn btn-default btn-xs'>
                                 <i class="far fa-edit"></i>
                             </a>
