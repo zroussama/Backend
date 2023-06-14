@@ -15,17 +15,17 @@ class Connexion extends Model
     public $table = 'connexions';
 
     public $fillable = [
-        'connexion_id',
-        'TYPE_HEBERGEMENT',
-        'PROMISE_CASE',
-        'STATUS',
-        'name',
-        'domain',
-        'port',
-        'link',
-        'username',
-        'password',
-        'rememberToken'
+            'connexion_id',
+            'TYPE_HEBERGEMENT',
+            'PREMISE_CASE',
+            'STATUS',
+            'name',
+            'domain',
+            'port',
+            'link',
+            'username',
+            'password',
+            'rememberToken'
     ];
 
     protected $casts = [

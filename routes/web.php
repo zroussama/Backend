@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\ArticlesController;
 use App\Http\Controllers\ClientController;
 use App\Models\Client;
 use Illuminate\Http\Request;
+use App\Http\Controllers\SearchController;
 
 /*
 |--------------------------------------------------------------------------
@@ -56,11 +57,63 @@ Route::group(['middleware' => 'auth'], function () {
 
    // Route::resource('users', \App\Http\Controllers\UsersController::class);
 });
+Route::get('/clients/{client}', [ClientController::class, 'show'])->name('clients.show');
 
-Route::any('/search',function(){
-    $q = request()->input('q');
-    $client = Client::where('entreprise','LIKE','%'.$q.'%')->orWhere('pays','LIKE','%'.$q.'%')->get();
-    if(count($client) > 0)
-        return view('welcome')->withDetails($client)->withQuery ( $q );
-    else return view ('welcome')->withMessage('No Details found. Try to search again !');
-});
+Route::get('/search', [SearchController::class, 'search'])->name('search');
+// Route::any('/search', function () {
+//     $q = request()->input('q');
+
+//     // Recherche des clients
+//     $clients = App\Models\Client::where('nom', 'LIKE', '%' . $q . '%')
+//         ->orWhere('entreprise', 'LIKE', '%' . $q . '%')
+//         ->orWhere('tel', 'LIKE', '%' . $q . '%')
+//         ->orWhere('email', 'LIKE', '%' . $q . '%')
+//         // Ajoutez d'autres conditions pour les champs de recherche des clients
+//         ->paginate(10);
+
+//     // Recherche des connexions
+//     $connexions = App\Models\Connexion::where('connexion_id', 'LIKE', '%' . $q . '%')
+//         ->orWhere('TYPE_HEBERGEMENT', 'LIKE', '%' . $q . '%')
+//         ->orWhere('PROMISE_CASE', 'LIKE', '%' . $q . '%')
+//         ->orWhere('STATUS', 'LIKE', '%' . $q . '%')
+//         ->orWhere('name', 'LIKE', '%' . $q . '%')
+//         ->orWhere('domain', 'LIKE', '%' . $q . '%')
+//         ->orWhere('port', 'LIKE', '%' . $q . '%')
+//         ->orWhere('link', 'LIKE', '%' . $q . '%')
+//         ->orWhere('username', 'LIKE', '%' . $q . '%')
+//         ->orWhere('password', 'LIKE', '%' . $q . '%')
+//         ->orWhere('rememberToken', 'LIKE', '%' . $q . '%')
+//         // Ajoutez d'autres conditions pour les champs de recherche des connexions
+//         ->paginate(10);
+
+//     // Recherche des fiches
+//     $fiches = App\Models\Fiche::where('entreprise', 'LIKE', '%' . $q . '%')
+//         ->orWhere('domaine_activite', 'LIKE', '%' . $q . '%')
+//         ->orWhere('gerant_nom', 'LIKE', '%' . $q . '%')
+//         ->orWhere('gerant_prenom', 'LIKE', '%' . $q . '%')
+//         ->orWhere('gerant_tel', 'LIKE', '%' . $q . '%')
+//         ->orWhere('gerant_email', 'LIKE', '%' . $q . '%')
+//         ->orWhere('autre_nom', 'LIKE', '%' . $q . '%')
+//         ->orWhere('autre_prenom', 'LIKE', '%' . $q . '%')
+//         ->orWhere('autre_tel', 'LIKE', '%' . $q . '%')
+//         ->orWhere('autre_email', 'LIKE', '%' . $q . '%')
+//         ->orWhere('autre_fonction', 'LIKE', '%' . $q . '%')
+//         ->orWhere('Pays_Origine', 'LIKE', '%' . $q . '%')
+//         ->orWhere('Ville_Origine', 'LIKE', '%' . $q . '%')
+//         ->orWhere('Prod_pays', 'LIKE', '%' . $q . '%')
+//         ->orWhere('prod_ville', 'LIKE', '%' . $q . '%')
+//         ->orWhere('Prod_adress', 'LIKE', '%' . $q . '%')
+//         ->orWhere('Origin_adress', 'LIKE', '%' . $q . '%')
+//         ->orWhere('logo', 'LIKE', '%' . $q . '%')
+//         // Ajoutez d'autres conditions pour les champs de recherche des fiches
+//         ->paginate(10);
+
+//     // Fusionner les résultats de recherche des différents modèles
+//     $results = collect([$clients, $connexions, $fiches])->flatten();
+
+//     if ($results->isNotEmpty()) {
+//         return view('welcome')->withDetails($results)->withQuery($q);
+//     } else {
+//         return view('welcome')->withMessage('Aucun détail trouvé. Veuillez réessayer !');
+//     }
+// })->name('search');

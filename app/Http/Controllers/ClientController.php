@@ -9,9 +9,19 @@ use RealRashid\SweetAlert\Facades\Alert;
 
 class ClientController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $clients = Client::paginate(10);
+        $search = $request['search'] ?? "";
+        if ($search != ""){
+            $clients = Client::where('entreprise', 'like', '%' . $search . '%')
+            ->orWhere('ville', 'like', '%' . $search . '%')
+            ->orWhere('pays', 'like', '%' . $search . '%')
+            ->orWhere('adresse', 'like', '%' . $search . '%')
+            ->orWhere('tel', 'like', '%' . $search . '%')
+            ->paginate(10);
+        } else {
+            $clients = Client::paginate(10);
+        }
         return view('clients.index', compact('clients'));
     }
     public function create()

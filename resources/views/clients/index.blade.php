@@ -108,85 +108,127 @@
                                     </tr>
                                 </thead>
                                 <tbody class="bg-white divide-y divide-gray-200">
+
                                     @foreach ($clients as $client)
-                                        <tr>
-                                            <td class="px-6 py-4 text-sm text-gray-900 whitespace-nowrap">
-                                                {{ $client->id }}
-                                            </td>
+                                        <a href="{{ route('clients.show', ['client' => $client->id]) }}">
+                                            <tr>
+                                                <td class="px-6 py-4 text-sm text-gray-900 whitespace-nowrap">
+                                                    {{ $client->id }}
+                                                </td>
 
-                                            <td class="px-6 py-4 text-sm text-gray-900 whitespace-nowrap">
-                                                {{ $client->entreprise }}
-                                            </td>
+                                                <td class="px-6 py-4 text-sm text-gray-900 whitespace-nowrap">
+                                                    {{ $client->entreprise }}
+                                                </td>
                                                 {{-- Todo : modifier les icons de l'etats des clients --}}
-                                            <td class="px-6 py-4 text-sm text-gray-900 whitespace-nowrap">
-                                                <span class="
-                                                    inline-flex items-center justify-center h-6 w-6 rounded-full
-                                                    {{ $client->tag === 'normal' ? 'bg-green-500' : '' }}
-                                                    {{ $client->tag === 'solde' ? 'bg-purple-500' : '' }}
-                                                    {{ $client->tag === 'maintenance' ? 'bg-orange-500' : '' }}
-                                                    {{ $client->tag === 'arreter' ? 'bg-red-500' : '' }}
-                                                    {{ $client->tag === 'suspendu' ? 'bg-yellow-500' : '' }}
-                                                ">
-                                                    <svg class="w-4 h-4 fill-current " viewBox="0 0 20 20">
-                                                        <circle cx="10" cy="10" r="9"/>
-                                                    </svg>
-                                                </span>
-                                                <span class="ml-2"></span>
-                                            </td>
-
-
-                                            <td class="px-6 py-4 text-sm text-gray-900 whitespace-nowrap">
-                                                {{ $client->tel }}
-                                            </td>
-
-                                            <td class="px-6 py-4 text-sm text-gray-900 whitespace-nowrap">
-                                                {{ $client->adresse }}
-                                            </td>
-
-                                            <td class="px-6 py-4 text-sm text-gray-900 whitespace-nowrap">
-                                                {{ $client->ville }}
-                                            </td>
-
-
-                                            <td class="w-12 h-10 px-2 py-1">
-
-                                                <svg class="w-full h-full" viewBox="0 0 24 24">
-                                                    @if ($client->pays == 'France')
-                                                        <x-flag-country-fr />
-                                                    @elseif ($client->pays == 'Espagne')
-                                                        <x-flag-country-es />
-                                                    @elseif ($client->pays == 'Allemagne')
-                                                        <x-flag-country-de />
-                                                    @elseif ($client->pays == 'Angleterre')
-                                                        <x-flag-country-gb />
-                                                    @elseif ($client->pays == 'Tunisie')
-                                                        <x-flag-country-tn />
-                                                    @elseif ($client->pays == 'Italie')
-                                                        <x-flag-country-it />
+                                                <td class="w-12 h-10 px-2 py-1">
+                                                    @if ($client->tag === 'arreter')
+                                                        <svg class="h-8 w-8 text-red-500" viewBox="0 0 24 24"
+                                                            fill="none" stroke="currentColor" stroke-width="2"
+                                                            stroke-linecap="round" stroke-linejoin="round">
+                                                            <circle cx="12" cy="12" r="10" />
+                                                            <rect x="9" y="9" width="6"
+                                                                height="6" />
+                                                        </svg>
+                                                    @elseif ($client->tag === 'solde')
+                                                        <svg class="h-8 w-8 text-gray-800" fill="none"
+                                                            viewBox="0 0 24 24" stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"
+                                                                d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                        </svg>
+                                                    @elseif ($client->tag === 'suspendu')
+                                                        <svg class="h-8 w-8 text-yellow-500" fill="none"
+                                                            viewBox="0 0 24 24" stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"
+                                                                d="M10 9v6m4-6v6m7-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                        </svg>
+                                                    @elseif ($client->tag === 'maintenance')
+                                                        <svg class="h-8 w-8 text-blue-500" width="24"
+                                                            height="24" viewBox="0 0 24 24" stroke-width="2"
+                                                            stroke="currentColor" fill="none"
+                                                            stroke-linecap="round" stroke-linejoin="round">
+                                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                                            <path
+                                                                d="M7 10h3v-3l-3.5 -3.5a6 6 0 0 1 8 8l6 6a2 2 0 0 1 -3 3l-6-6a6 6 0 0 1 -8 -8l3.5 3.5" />
+                                                        </svg>
+                                                    @elseif ($client->tag === 'normal')
+                                                        <svg class="h-8 w-8 text-green-500" width="24"
+                                                            height="24" viewBox="0 0 24 24" stroke-width="2"
+                                                            stroke="currentColor" fill="none"
+                                                            stroke-linecap="round" stroke-linejoin="round">
+                                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                                            <circle cx="12" cy="12" r="9" />
+                                                            <path d="M9 12l2 2l4 -4" />
+                                                        </svg>
+                                                    @elseif ($client->tag === 'block')
+                                                        <svg class="h-8 w-8 text-gray-500" width="24"
+                                                            height="24" viewBox="0 0 24 24" stroke-width="2"
+                                                            stroke="currentColor" fill="none"
+                                                            stroke-linecap="round" stroke-linejoin="round">
+                                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                                            <rect x="5" y="11" width="14"
+                                                                height="10" rx="2" />
+                                                            <circle cx="12" cy="16" r="1" />
+                                                            <path d="M8 11v-4a4 4 0 0 1 8 0v4" />
+                                                        </svg>
                                                     @endif
-                                                </svg>
+                                                </td>
 
-                                            </td>
-                                            <td
-                                                class="flex items-center justify-center px-6 py-4 text-sm font-medium whitespace-nowrap">
-                                                <a href="{{ route('clients.show', $client->id) }}"
-                                                    class="mb-2 mr-2 text-blue-600 hover:text-blue-900">
-                                                    Voir</a>
-                                                <a href="{{ route('clients.edit', $client->id) }}"
-                                                    class="mb-2 mr-2 text-indigo-600 hover:text-indigo-900">
-                                                    Modifier</a>
-                                                <form class="inline-block"
-                                                    action="{{ route('clients.destroy', $client->id) }}" method="POST"
-                                                    onsubmit="return confirm('Êtes-vous sûr/e?');">
-                                                    <input type="hidden" name="_method" value="DELETE">
-                                                    <input type="hidden" name="_token"
-                                                        value="{{ csrf_token() }}">
-                                                    <input type="submit"
-                                                        class="mb-2 mr-2 text-red-600 hover:text-red-900"
-                                                        value="Supprimer">
-                                                </form>
-                                            </td>
-                                        </tr>
+
+                                                <td class="px-6 py-4 text-sm text-gray-900 whitespace-nowrap">
+                                                    {{ $client->tel }}
+                                                </td>
+
+                                                <td class="px-6 py-4 text-sm text-gray-900 whitespace-nowrap">
+                                                    {{ $client->adresse }}
+                                                </td>
+
+                                                <td class="px-6 py-4 text-sm text-gray-900 whitespace-nowrap">
+                                                    {{ $client->ville }}
+                                                </td>
+
+
+                                                <td class="w-12 h-10 px-2 py-1">
+
+                                                    <svg class="w-full h-full" viewBox="0 0 24 24">
+                                                        @if ($client->pays == 'France')
+                                                            <x-flag-country-fr />
+                                                        @elseif ($client->pays == 'Espagne')
+                                                            <x-flag-country-es />
+                                                        @elseif ($client->pays == 'Allemagne')
+                                                            <x-flag-country-de />
+                                                        @elseif ($client->pays == 'Angleterre')
+                                                            <x-flag-country-gb />
+                                                        @elseif ($client->pays == 'Tunisie')
+                                                            <x-flag-country-tn />
+                                                        @elseif ($client->pays == 'Italie')
+                                                            <x-flag-country-it />
+                                                        @endif
+                                                    </svg>
+
+                                                </td>
+                                                <td
+                                                    class="flex items-center justify-center px-6 py-4 text-sm font-medium whitespace-nowrap">
+                                                    <a href="{{ route('clients.show', $client->id) }}"
+                                                        class="mb-2 mr-2 text-blue-600 hover:text-blue-900">
+                                                        Voir</a>
+                                                    <a href="{{ route('clients.edit', $client->id) }}"
+                                                        class="mb-2 mr-2 text-indigo-600 hover:text-indigo-900">
+                                                        Modifier</a>
+                                                    <form class="inline-block"
+                                                        action="{{ route('clients.destroy', $client->id) }}"
+                                                        method="POST" onsubmit="return confirm('Êtes-vous sûr/e?');">
+                                                        <input type="hidden" name="_method" value="DELETE">
+                                                        <input type="hidden" name="_token"
+                                                            value="{{ csrf_token() }}">
+                                                        <input type="submit"
+                                                            class="mb-2 mr-2 text-red-600 hover:text-red-900"
+                                                            value="Supprimer">
+                                                    </form>
+                                                </td>
+                                            </tr>
+                                        </a>
                                     @endforeach
                                 </tbody>
                                 <tfoot>
@@ -278,14 +320,14 @@
                     });
             });
         </script>
-         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-         <script>
-             $(document).ready(function() {
-                 $('.icon-table').hover(function() {
-                     var tag = $(this).data('tag');
-                     $(this).attr('title', tag);
-                 });
-             });
-         </script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $('.icon-table').hover(function() {
+                    var tag = $(this).data('tag');
+                    $(this).attr('title', tag);
+                });
+            });
+        </script>
 
 </x-app-layout>
