@@ -20,11 +20,11 @@ return new class extends Migration
             $table->date('date_contrat');
             $table->string('kbis');
             $table->string('autre_fichier');
-            $table->boolean('trigger');           
+            $table->boolean('trigger');
             $table->timestamps();
 
         });
-        
+
     }
 
     /**

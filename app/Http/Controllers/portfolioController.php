@@ -2,12 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Mail;
+
+use Carbon\Carbon;
 use App\Http\Requests\CreateportfolioRequest;
 use App\Http\Requests\UpdateportfolioRequest;
 use App\Http\Controllers\AppBaseController;
+use App\Models\portfolio;
 use App\Repositories\portfolioRepository;
-use Illuminate\Http\Request;
 
+
+use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class portfolioController extends AppBaseController
 {
@@ -18,9 +24,7 @@ class portfolioController extends AppBaseController
     {
         $this->portfolioRepository = $portfolioRepo;
     }
-    /**
-     * Display a listing of the portfolio.
-     */
+
     public function index(Request $request)
     {
         $portfolios = $this->portfolioRepository->paginate(10);
@@ -28,17 +32,11 @@ class portfolioController extends AppBaseController
             ->with('portfolios', $portfolios);
     }
 
-    /**
-     * Show the form for creating a new portfolio.
-     */
     public function create()
     {
         return view('portfolios.create');
     }
 
-    /**
-     * Store a newly created portfolio in storage.
-     */
     public function store(CreateportfolioRequest $request)
     {
         $input = $request->all();
@@ -46,9 +44,6 @@ class portfolioController extends AppBaseController
         return redirect(route('portfolios.index'));
     }
 
-    /**
-     * Display the specified portfolio.
-     */
     public function show($id)
     {
         $portfolio = $this->portfolioRepository->find($id);
@@ -58,10 +53,6 @@ class portfolioController extends AppBaseController
         }
         return view('portfolios.show')->with('portfolio', $portfolio);
     }
-
-    /**
-     * Show the form for editing the specified portfolio.
-     */
     public function edit($id)
     {
         $portfolio = $this->portfolioRepository->find($id);
@@ -73,9 +64,7 @@ class portfolioController extends AppBaseController
         return view('portfolios.edit')->with('portfolio', $portfolio);
     }
 
-    /**
-     * Update the specified portfolio in storage.
-     */
+
     public function update($id, UpdateportfolioRequest $request)
     {
         $portfolio = $this->portfolioRepository->find($id);
@@ -101,5 +90,32 @@ class portfolioController extends AppBaseController
         }
         $this->portfolioRepository->delete($id);
         return redirect(route('portfolios.index'));
+    }
+
+    public function notifier($id,$dateFichier,$notification) {
+        $portfolio = portfolio::find($id);
+
+        if ($portfolio && !$portfolio->notification && $dateFichier == Carbon::now()->subDays(2)->toDateString()) {
+            // Logique de notification
+            $users = $portfolio->users; // Remplacez "users" par la relation appropriée dans votre modèle
+            $emailRecipients = $portfolio->getEmailRecipients(); // Méthode pour obtenir les destinataires des e-mails
+
+            // Envoyer la notification aux utilisateurs
+            foreach ($users as $user) {
+                $user->sendNotification($portfolio); // Méthode pour envoyer la notification à l'utilisateur
+            }
+
+            // Envoyer la notification par e-mail
+            foreach ($emailRecipients as $recipient) {
+                Mail::to($recipient); // Remplacez "NotificationMail" par votre classe de notification par e-mail
+            }
+
+            // Effectuer une alerte (vous pouvez implémenter l'alerte de votre choix ici)
+            Alert::notify('Notification', 'Une notification a été envoyée.', 'success');
+
+            // Mettre à jour le drapeau de notification
+            $portfolio->notification = true;
+            $portfolio->save();
+        }
     }
 }

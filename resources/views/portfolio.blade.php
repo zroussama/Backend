@@ -1,5 +1,5 @@
 
-  
+
 <!doctype html>
 <html lang="en" class="h-100">
   <head>
@@ -12,9 +12,9 @@
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/cover/">
 
-    
 
-    
+
+
 
 <link href="/docs/5.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 
@@ -81,30 +81,29 @@
       }
     </style>
 
-    
+
     <!-- Custom styles for this template -->
     <link href="cover.css" rel="stylesheet">
   </head>
   <body class="d-flex h-100 text-center text-bg-dark">
-    
+
 <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
   <header class="mb-auto">
     <div>
       <h3 class="float-md-start mb-0">Cover</h3>
       <nav class="nav nav-masthead justify-content-center float-md-end">
-        <a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="#">Home</a>
-        <a class="nav-link fw-bold py-1 px-0" href="#">Features</a>
-        <a class="nav-link fw-bold py-1 px-0" href="#">Contact</a>
+        <a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="/">Accueil</a>
+        <a class="nav-link fw-bold py-1 px-0" href="/clients">Clients</a>
+        <a class="nav-link fw-bold py-1 px-0" href="/connexions">Connexions</a>
+        <a class="nav-link fw-bold py-1 px-0" href="/contacts">Contacts</a>
       </nav>
     </div>
   </header>
 
   <main class="px-3">
-    <h1>Cover your page.</h1>
-    <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
-    <p class="lead">
-      <a href="#" class="btn btn-lg btn-light fw-bold border-white bg-white">Learn more</a>
-    </p>
+    <h1>Portfolio</h1>
+    <p class="lead">Uplaod contracts, KBis & dates to be notified in certain dates</p>
+
     <form action="{{ route('portfolios.store') }}" method="post" enctype="multipart/form-data">
       @csrf
       <div class="d-flex h-100 text-center text-bg-dark" >
@@ -129,6 +128,6 @@
 </div>
 
 
-    
+
   </body>
 </html>
