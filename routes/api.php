@@ -61,8 +61,8 @@ Route::resource('connexions', App\Http\Controllers\API\ConnexionAPIController::c
 Route::resource('clients', App\Http\Controllers\API\ClientAPIController::class);
    // ->except(['create', 'edit']);
 
-Route::resource('contacts', App\Http\Controllers\API\ContactAPIController::class)
-    ->except(['create', 'edit']);
+Route::resource('contacts', App\Http\Controllers\API\ContactAPIController::class);
+
 
 Route::resource('fichiers', App\Http\Controllers\API\FichierAPIController::class)
     ->except(['create', 'edit']);

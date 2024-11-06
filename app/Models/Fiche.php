@@ -3,28 +3,40 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Fiche extends Model
 {
-    //Relation entre Fiche et Contact ||   1 Fiche --> n contact  
+
+    public function client(): BelongsTo
+    {
+        return $this->belongsTo(Client::class);
+    }
+
+    public function portfolio(): BelongsTo
+    {
+        return $this->belongsTo(portfolio::class);
+    }
+
+    //Relation entre Fiche et Contact ||   1 Fiche --> n contact
     public function contacts()
     {
         return $this->hasMany(Contact::class);
     }
 
-    //Relation entre Facturation et Fiche 
+    //Relation entre Facturation et Fiche
     public function facturation()
     {
         return $this->hasOne('App\Models\CMK');
     }
 
     // Relation entre Fiche et Connexion
-    public function connexion()
+    public function connexion(): BelongsTo
     {
-        return $this->hasOne('App\Models\Connexion');
+        return $this->belongsTo(Connexion::class);
     }
 
-    
+
 
     // Colonnes Fiches
     public $table = 'fiches';
@@ -71,9 +83,6 @@ class Fiche extends Model
         'logo' => 'string'
     ];
 
-    public static array $rules = [
-        
-    ];
+    public static array $rules = [];
 
-    
 }

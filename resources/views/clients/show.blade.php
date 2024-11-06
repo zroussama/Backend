@@ -59,158 +59,106 @@
     </x-slot>
     {{-- list container --}}
 
-    {{-- Liste classique  --}}
-
-
-    {{-- Card  --}}
-    {{-- Information Client statique --}}
     <div class="py-10 mx-auto max-w-7xl sm:px-6 lg:px-8">
-        <x-form-section submit="updateClientInformation">
-            <x-slot name="title">
-                {{ __('Client Information :entreprise', ['entreprise' => $client->entreprise])  }}
-            </x-slot>
 
-            <x-slot name="description">
-                {{ __('Mettez à jour les informations de client ') }}
-            </x-slot>
-            <div class="block mt-8">
-                <a href="{{ route('clients.index') }}"
-                    class="px-4 py-2 font-bold text-black bg-gray-200 rounded hover:bg-gray-300">Back to list</a>
+        {{-- Liste classique  --}}
+
+
+        {{-- Card  --}}
+        <div class="py-10 mx-auto max-w-7xl sm:px-6 lg:px-8">
+            <div class="px-4 py-5 bg-white sm:p-6 shadow sm:rounded-tl-md sm:rounded-tr-md">
+                <div class="px-4 sm:px-0">
+                    <h3 class="text-base font-semibold leading-7 text-gray-900">Applicant Information
+                    </h3>
+                    <p class="max-w-2xl mt-1 text-sm leading-6 text-gray-500">Personal details and application.</p>
+                </div>
+                <div class="mt-6 border-t border-gray-100">
+                    <dl class="divide-y divide-gray-100">
+                        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                            <dt class="text-sm font-medium leading-6 text-gray-900">Entreprise</dt>
+                            <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
+                                {{ $client->entreprise }}!</dd>
+                        </div>
+                        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                            <dt class="text-sm font-medium leading-6 text-gray-900">Adresse</dt>
+                            <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
+                                {{ $client->entreprise }}
+                            </dd>
+                        </div>
+                        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                            <dt class="text-sm font-medium leading-6 text-gray-900">Ville</dt>
+                            <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
+                                {{ $client->ville }}</dd>
+                        </div>
+                        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                            <dt class="text-sm font-medium leading-6 text-gray-900">Pays</dt>
+                            <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{ $client->pays }}
+                            </dd>
+                        </div>
+                        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                            <dt class="text-sm font-medium leading-6 text-gray-900">Télephone</dt>
+                            <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{ $client->tel }}
+                            </dd>
+                        </div>
+                        <div class="border-t border-gray-200" /> {{-- Ligne border decomposé --}}
+                        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                            <dt class="text-sm font-medium leading-6 text-gray-900">Portfolio</dt>
+                            <dd class="mt-2 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+                                <ul role="list" class="border border-gray-200 divide-y divide-gray-100 rounded-md">
+                                    <li class="flex items-center justify-between py-4 pl-4 pr-5 text-sm leading-6">
+                                        <div class="flex items-center flex-1 w-0">
+                                            <svg class="flex-shrink-0 w-5 h-5 text-gray-400" viewBox="0 0 20 20"
+                                                fill="currentColor" aria-hidden="false">
+                                                <path fill-rule="evenodd"
+                                                    d="M15.621 4.379a3 3 0 00-4.242 0l-7 7a3 3 0 004.241 4.243h.001l.497-.5a.75.75 0 011.064 1.057l-.498.501-.002.002a4.5 4.5 0 01-6.364-6.364l7-7a4.5 4.5 0 016.368 6.36l-3.455 3.553A2.625 2.625 0 119.52 9.52l3.45-3.451a.75.75 0 111.061 1.06l-3.45 3.451a1.125 1.125 0 001.587 1.595l3.454-3.553a3 3 0 000-4.242z"
+                                                    clip-rule="evenodd" />
+                                            </svg>
+                                            <div class="flex flex-1 min-w-0 gap-2 ml-4">
+                                               <span class="font-medium truncate">Kbis_Comunik.pdf</span>
+                                                <span class="flex-shrink-0 text-gray-400">2.4mb</span>
+                                            </div>
+                                        </div>
+                                        <div class="flex-shrink-0 ml-4">
+                                            <a href="#"
+                                                class="font-medium text-indigo-600 hover:text-indigo-500">Download</a>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-center justify-between py-4 pl-4 pr-5 text-sm leading-6">
+                                        <div class="flex items-center flex-1 w-0">
+                                            <svg class="flex-shrink-0 w-5 h-5 text-gray-400" viewBox="0 0 20 20"
+                                                fill="currentColor" aria-hidden="true">
+                                                <path fill-rule="evenodd"
+                                                    d="M15.621 4.379a3 3 0 00-4.242 0l-7 7a3 3 0 004.241 4.243h.001l.497-.5a.75.75 0 011.064 1.057l-.498.501-.002.002a4.5 4.5 0 01-6.364-6.364l7-7a4.5 4.5 0 016.368 6.36l-3.455 3.553A2.625 2.625 0 119.52 9.52l3.45-3.451a.75.75 0 111.061 1.06l-3.45 3.451a1.125 1.125 0 001.587 1.595l3.454-3.553a3 3 0 000-4.242z"
+                                                    clip-rule="evenodd" />
+                                            </svg>
+                                            <div class="flex flex-1 min-w-0 gap-2 ml-4">
+                                                <span
+                                                    class="font-medium truncate">coverletter_back_end_developer.pdf</span>
+                                                <span class="flex-shrink-0 text-gray-400">4.5mb</span>
+                                            </div>
+                                        </div>
+                                        <div class="flex-shrink-0 ml-4">
+                                            <a href="#"
+                                                class="font-medium text-indigo-600 hover:text-indigo-500">Download</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </dd>
+                        </div>
+                    </dl>
+                </div>
             </div>
-            <x-slot name="form">
-
-
-
-
-
-
-                <!-- Entreprise -->
-                <div class="col-span-6 sm:col-span-4">
-                    <x-label for="entreprise" value="{{ __('Entreprise') }}" />
-                    <x-input id="entreprise" placeholder="{{ $client->entreprise }}" type="text"
-                        class="block w-full mt-1" wire:model.defer="state.entreprise" autocomplete="entreprise" />
-                    <x-input-error for="entreprise" class="mt-2" />
-                </div>
-
-                <!-- Adresse -->
-                <div class="col-span-6 sm:col-span-4">
-                    <x-label for="adresse" value="{{ __('Adresse') }}" />
-                    <x-input id="adresse" placeholder="{{ $client->adresse }}" type="text"
-                        class="block w-full mt-1" wire:model.defer="state.adresse" autocomplete="adresse" />
-                    <x-input-error for="adresse" class="mt-2" />
-                </div>
-
-                <!-- Ville -->
-                <div class="col-span-6 sm:col-span-4">
-                    <x-label for="ville" value="{{ __('Ville') }}" />
-                    <x-input id="ville" placeholder="{{ $client->ville }}" type="text" class="block w-full mt-1"
-                        wire:model.defer="state.ville" autocomplete="ville" />
-                    <x-input-error for="ville" class="mt-2" />
-                </div>
-
-                <!-- Pays -->
-                <div class="col-span-6 sm:col-span-4">
-                    <x-label for="pays" value="{{ __('Pays') }}" />
-                    <x-input id="pays" placeholder="{{ $client->pays }}" type="text"
-                        class="block w-full mt-1" wire:model.defer="state.pays" autocomplete="pays" />
-                    <x-input-error for="pays" class="mt-2" />
-                </div>
-
-                <!-- Tel -->
-                <div class="col-span-6 sm:col-span-4">
-                    <x-label for="tel" value="{{ __('Tél') }}" />
-                    <x-input id="tel" placeholder="{{ $client->tel }}" type="text"
-                        class="block w-full mt-1" wire:model.defer="state.tel" autocomplete="tel" />
-                    <x-input-error for="tel" class="mt-2" />
-                </div>
-
-            </x-slot>
-
-            <x-slot name="actions">
-                <x-button>
-                    {{ __('Retour') }}
-                </x-button>
-
-                <x-button>
-                    {{ __('Sauvegarder') }}
-                </x-button>
-
-            </x-slot>
-            <div class="border-t border-gray-200" /> {{-- Ligne border decomposé --}}
-        </x-form-section>
+        </div>
     </div>
+    {{-- Information Client statique --}}
+
 
 
 
     {{-- Information Client statique --}}
 
     {{-- Information Client C O N N E X I O N S --}}
-    <div class="py-10 mx-auto max-w-7xl sm:px-6 lg:px-8">
-        <x-form-section submit="updateClientInformation">
-            <x-slot name="title">
-                {{ __("Les informations de connexions de :entreprise", ['entreprise' => $client->entreprise]) }}
-            </x-slot>
 
-            <x-slot name="description">
-                {{ __('Mettez à jour les paramètres et les liens de conenxions  ') }}
-            </x-slot>
-
-            <x-slot name="form">
-                <!-- Entreprise -->
-                <div class="col-span-6 sm:col-span-4">
-                    <x-label for="entreprise" value="{{ __('Entreprise') }}" />
-                    <x-input id="entreprise" placeholder="{{ $client->entreprise }}" type="text"
-                        class="block w-full mt-1" wire:model.defer="state.entreprise" autocomplete="entreprise" />
-                    <x-input-error for="entreprise" class="mt-2" />
-                </div>
-
-                <!-- Adresse -->
-                <div class="col-span-6 sm:col-span-4">
-                    <x-label for="adresse" value="{{ __('Adresse') }}" />
-                    <x-input id="adresse" placeholder="{{ $client->adresse }}" type="text"
-                        class="block w-full mt-1" wire:model.defer="state.adresse" autocomplete="adresse" />
-                    <x-input-error for="adresse" class="mt-2" />
-                </div>
-
-                <!-- Ville -->
-                <div class="col-span-6 sm:col-span-4">
-                    <x-label for="ville" value="{{ __('Ville') }}" />
-                    <x-input id="ville" placeholder="{{ $client->ville }}" type="text"
-                        class="block w-full mt-1" wire:model.defer="state.ville" autocomplete="ville" />
-                    <x-input-error for="ville" class="mt-2" />
-                </div>
-
-                <!-- Pays -->
-                <div class="col-span-6 sm:col-span-4">
-                    <x-label for="pays" value="{{ __('Pays') }}" />
-                    <x-input id="pays" placeholder="{{ $client->pays }}" type="text"
-                        class="block w-full mt-1" wire:model.defer="state.pays" autocomplete="pays" />
-                    <x-input-error for="pays" class="mt-2" />
-                </div>
-
-                <!-- Tel -->
-                <div class="col-span-6 sm:col-span-4">
-                    <x-label for="tel" value="{{ __('Tél') }}" />
-                    <x-input id="tel" placeholder="{{ $client->tel }}" type="text"
-                        class="block w-full mt-1" wire:model.defer="state.tel" autocomplete="tel" />
-                    <x-input-error for="tel" class="mt-2" />
-                </div>
-
-            </x-slot>
-
-            <x-slot name="actions">
-                <x-button>
-                    {{ __('Retour') }}
-                </x-button>
-
-                <x-button>
-                    {{ __('Sauvegarder') }}
-                </x-button>
-
-            </x-slot>
-            <div class="border-t border-gray-200" /> {{-- Ligne border decomposé --}}
-        </x-form-section>
-    </div>
     {{-- Information Client C O N N E X I O N S --}}
 
 

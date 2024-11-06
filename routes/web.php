@@ -7,9 +7,10 @@ use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\SearchController;
-
-
-
+use App\Http\Controllers\TypeaheadController;
+use App\Http\Controllers\ConnexionController;
+use App\Http\Controllers\FicheController;
+use App\Http\Controllers\SuchenController;
 
 Route::get('/', function () {
     return view('dashboard');
@@ -17,14 +18,8 @@ Route::get('/', function () {
 
 Route::resource('users', UserController::class);
 
-//Route::resource('connexions', ConnexionController::class);
-// Route::resource('connections', App\Http\Controllers\ConnectionController::class);
-// Route::resource('fiches', App\Http\Controllers\FicheController::class);
-// Route::resource('portfolios', App\Http\Controllers\portfolioController::class);
-// Route::resource('c-m-k-s', App\Http\Controllers\CMKController::class);
 
 
-Route::resource('connexions', App\Http\Controllers\ConnexionController::class);
 
 
 Route::middleware([
@@ -37,23 +32,22 @@ Route::middleware([
     })->name('dashboard');
 
 
+    Route::resource('connexions', ConnexionController::class);
+    Route::get('/connexions/{connexion}', [ConnexionController::class, 'show'])->name('connexions.show');
     Route::resource('portfolios', PortfolioController::class)->except(['show']);
     Route::get('/portfolios/{portfolio}', [PortfolioController::class, 'show'])->name('portfolios.show');
     Route::resource('contacts', ContactController::class)->except(['show']);
     Route::get('/contacts/{contact}', [ContactController::class, 'show'])->name('contacts.show');
     Route::resource('clients', ClientController::class);
-    Route::post('/clients', 'ClientController@store')->name('clients.store');
     Route::get('/clients/{client}', [ClientController::class, 'show'])->name('clients.show');
     Route::get('/search', [SearchController::class, 'search'])->name('search');
+    Route::resource('fiches', FicheController::class);
+    //Search here
+    Route::get('/home', [TypeaheadController::class, 'index']);
+    Route::get('/autocomplete-search', [TypeaheadController::class, 'autocompleteSearch']);
+    //suchenController
+    Route::get('/suchen/simple', [ClientController::class, 'simple'])->name('simple_search');
+    Route::get('/suchen/advance', [ClientController::class, 'advance'])->name('advance_search');
+    Route::get('/suchen', [SuchenController::class, 'index']);
 
 });
-
-
-//Route::resource('clients',App\Http\Controllers\ClientController::class);
-
-// Route::group(['middleware' => 'auth'], function () {
-//     Route::resource('clients', ClientController::class);
-// });
-
-// Route::any('/search', function () {
-//     $q = request()->input('q');

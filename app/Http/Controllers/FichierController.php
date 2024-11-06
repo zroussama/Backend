@@ -47,7 +47,6 @@ class FichierController extends AppBaseController
 
         $fichier = $this->fichierRepository->create($input);
 
-        Flash::success('Fichier saved successfully.');
 
         return redirect(route('fichiers.index'));
     }
@@ -60,7 +59,6 @@ class FichierController extends AppBaseController
         $fichier = $this->fichierRepository->find($id);
 
         if (empty($fichier)) {
-            Flash::error('Fichier not found');
 
             return redirect(route('fichiers.index'));
         }
@@ -76,7 +74,7 @@ class FichierController extends AppBaseController
         $fichier = $this->fichierRepository->find($id);
 
         if (empty($fichier)) {
-            Flash::error('Fichier not found');
+
 
             return redirect(route('fichiers.index'));
         }
@@ -92,14 +90,12 @@ class FichierController extends AppBaseController
         $fichier = $this->fichierRepository->find($id);
 
         if (empty($fichier)) {
-            Flash::error('Fichier not found');
 
             return redirect(route('fichiers.index'));
         }
 
         $fichier = $this->fichierRepository->update($request->all(), $id);
 
-        Flash::success('Fichier updated successfully.');
 
         return redirect(route('fichiers.index'));
     }
@@ -114,14 +110,11 @@ class FichierController extends AppBaseController
         $fichier = $this->fichierRepository->find($id);
 
         if (empty($fichier)) {
-            Flash::error('Fichier not found');
 
             return redirect(route('fichiers.index'));
         }
 
         $this->fichierRepository->delete($id);
-
-        Flash::success('Fichier deleted successfully.');
 
         return redirect(route('fichiers.index'));
     }

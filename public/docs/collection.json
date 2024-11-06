@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "8cf394db-6990-4393-9d82-426aefb49ba1",
+        "_postman_id": "f77448c2-c8fb-4707-826f-0657c123e7df",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -19,6 +19,110 @@
             "name": "Endpoints",
             "description": "",
             "item": [
+                {
+                    "name": "GET api\/user",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/user",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/user"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Display a listing of the Fiches.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/fiches",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/fiches"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "GET|HEAD \/fiches",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "59"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"success\":true,\"data\":[{\"id\":11,\"fiche_id\":11,\"entreprise\":\"Test\",\"domaine_activite\":\"test1\",\"logo\":\"\",\"gerant_nom\":\"abderahman\",\"gerant_prenom\":\"slim\",\"gerant_tel\":544545,\"gerant_email\":\"ejkf@gdf.com\",\"autre_nom\":\"jkof\",\"autre_prenom\":\"joe\",\"autre_tel\":1221,\"autre_email\":\"okf@lkh.com\",\"autre_fonction\":\"gerant2\",\"Pays_Origine\":\"tunisie\",\"Ville_Origine\":\"sfax\",\"Origin_adress\":\"offo\",\"Prod_pays\":\"France\",\"prod_ville\":\"paris\",\"Prod_adress\":\"tour eiffil\",\"created_at\":null,\"updated_at\":null},{\"id\":12,\"fiche_id\":0,\"entreprise\":\"crud test\",\"domaine_activite\":\"oei\",\"logo\":\"auth.png\",\"gerant_nom\":\"jf\",\"gerant_prenom\":\"jvkn\",\"gerant_tel\":2155,\"gerant_email\":\"foek@gl.com\",\"autre_nom\":\"rg,opp\",\"autre_prenom\":\"kgj\",\"autre_tel\":68,\"autre_email\":\"oussama.zribi@esprit.tn\",\"autre_fonction\":\"fe\",\"Pays_Origine\":\"zer\",\"Ville_Origine\":\"aze\",\"Origin_adress\":\"daz\",\"Prod_pays\":\"aze\",\"prod_ville\":\"adz\",\"Prod_adress\":\"ad\",\"created_at\":\"2023-06-26T10:36:38.000000Z\",\"updated_at\":\"2023-06-26T10:36:38.000000Z\"}],\"message\":\"Fiches retrieved successfully\"}",
+                            "name": ""
+                        }
+                    ]
+                },
                 {
                     "name": "Store a newly created Fiche in storage.",
                     "request": {
@@ -48,6 +152,70 @@
                     "response": []
                 },
                 {
+                    "name": "Display the specified Fiche.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/fiches\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/fiches\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "maiores",
+                                    "description": "The ID of the fich."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "GET|HEAD \/fiches\/{id}",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "58"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 500,
+                            "body": "{\n    \"message\": \"App\\\\Repositories\\\\BaseRepository::find(): Argument #1 ($id) must be of type int, string given, called in C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\app\\\\Http\\\\Controllers\\\\API\\\\FicheAPIController.php on line 60\",\n    \"exception\": \"TypeError\",\n    \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\app\\\\Repositories\\\\BaseRepository.php\",\n    \"line\": 117,\n    \"trace\": [\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\app\\\\Http\\\\Controllers\\\\API\\\\FicheAPIController.php\",\n            \"line\": 60,\n            \"function\": \"find\",\n            \"class\": \"App\\\\Repositories\\\\BaseRepository\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Controller.php\",\n            \"line\": 54,\n            \"function\": \"show\",\n            \"class\": \"App\\\\Http\\\\Controllers\\\\API\\\\FicheAPIController\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\ControllerDispatcher.php\",\n            \"line\": 43,\n            \"function\": \"callAction\",\n            \"class\": \"Illuminate\\\\Routing\\\\Controller\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Route.php\",\n            \"line\": 259,\n            \"function\": \"dispatch\",\n            \"class\": \"Illuminate\\\\Routing\\\\ControllerDispatcher\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Route.php\",\n            \"line\": 205,\n            \"function\": \"runController\",\n            \"class\": \"Illuminate\\\\Routing\\\\Route\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",\n            \"line\": 798,\n            \"function\": \"run\",\n            \"class\": \"Illuminate\\\\Routing\\\\Route\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 141,\n            \"function\": \"Illuminate\\\\Routing\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Middleware\\\\SubstituteBindings.php\",\n            \"line\": 50,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 180,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Routing\\\\Middleware\\\\SubstituteBindings\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests.php\",\n            \"line\": 126,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests.php\",\n            \"line\": 92,\n            \"function\": \"handleRequest\",\n            \"class\": \"Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests.php\",\n            \"line\": 54,\n            \"function\": \"handleRequestUsingNamedLimiter\",\n            \"class\": \"Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 180,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 116,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",\n            \"line\": 797,\n            \"function\": \"then\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",\n            \"line\": 776,\n            \"function\": \"runRouteWithinStack\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",\n            \"line\": 740,\n            \"function\": \"runRoute\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",\n            \"line\": 729,\n            \"function\": \"dispatchToRoute\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Kernel.php\",\n            \"line\": 190,\n            \"function\": \"dispatch\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 141,\n            \"function\": \"Illuminate\\\\Foundation\\\\Http\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\livewire\\\\livewire\\\\src\\\\DisableBrowserCache.php\",\n            \"line\": 19,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 180,\n            \"function\": \"handle\",\n            \"class\": \"Livewire\\\\DisableBrowserCache\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest.php\",\n            \"line\": 21,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\ConvertEmptyStringsToNull.php\",\n            \"line\": 31,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 180,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\ConvertEmptyStringsToNull\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest.php\",\n            \"line\": 21,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TrimStrings.php\",\n            \"line\": 40,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 180,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TrimStrings\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\ValidatePostSize.php\",\n            \"line\": 27,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 180,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\ValidatePostSize\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\PreventRequestsDuringMaintenance.php\",\n            \"line\": 86,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 180,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\PreventRequestsDuringMaintenance\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Http\\\\Middleware\\\\HandleCors.php\",\n            \"line\": 62,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 180,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Http\\\\Middleware\\\\HandleCors\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Http\\\\Middleware\\\\TrustProxies.php\",\n            \"line\": 39,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 180,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Http\\\\Middleware\\\\TrustProxies\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 116,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Kernel.php\",\n            \"line\": 165,\n            \"function\": \"then\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Kernel.php\",\n            \"line\": 134,\n            \"function\": \"sendRequestThroughRouter\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls.php\",\n            \"line\": 299,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls.php\",\n            \"line\": 287,\n            \"function\": \"callLaravelOrLumenRoute\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls.php\",\n            \"line\": 92,\n            \"function\": \"makeApiCall\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls.php\",\n            \"line\": 45,\n            \"function\": \"makeResponseCall\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls.php\",\n            \"line\": 35,\n            \"function\": \"makeResponseCallIfConditionsPass\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\Extracting\\\\Extractor.php\",\n            \"line\": 209,\n            \"function\": \"__invoke\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\Extracting\\\\Extractor.php\",\n            \"line\": 163,\n            \"function\": \"iterateThroughStrategies\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Extractor\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\Extracting\\\\Extractor.php\",\n            \"line\": 95,\n            \"function\": \"fetchResponses\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Extractor\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\GroupedEndpoints\\\\GroupedEndpointsFromApp.php\",\n            \"line\": 124,\n            \"function\": \"processRoute\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Extractor\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\GroupedEndpoints\\\\GroupedEndpointsFromApp.php\",\n            \"line\": 71,\n            \"function\": \"extractEndpointsInfoFromLaravelApp\",\n            \"class\": \"Knuckles\\\\Scribe\\\\GroupedEndpoints\\\\GroupedEndpointsFromApp\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\GroupedEndpoints\\\\GroupedEndpointsFromApp.php\",\n            \"line\": 49,\n            \"function\": \"extractEndpointsInfoAndWriteToDisk\",\n            \"class\": \"Knuckles\\\\Scribe\\\\GroupedEndpoints\\\\GroupedEndpointsFromApp\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\Commands\\\\GenerateDocumentation.php\",\n            \"line\": 51,\n            \"function\": \"get\",\n            \"class\": \"Knuckles\\\\Scribe\\\\GroupedEndpoints\\\\GroupedEndpointsFromApp\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Container\\\\BoundMethod.php\",\n            \"line\": 36,\n            \"function\": \"handle\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Commands\\\\GenerateDocumentation\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Container\\\\Util.php\",\n            \"line\": 41,\n            \"function\": \"Illuminate\\\\Container\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Container\\\\BoundMethod\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Container\\\\BoundMethod.php\",\n            \"line\": 93,\n            \"function\": \"unwrapIfClosure\",\n            \"class\": \"Illuminate\\\\Container\\\\Util\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Container\\\\BoundMethod.php\",\n            \"line\": 35,\n            \"function\": \"callBoundMethod\",\n            \"class\": \"Illuminate\\\\Container\\\\BoundMethod\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Container\\\\Container.php\",\n            \"line\": 661,\n            \"function\": \"call\",\n            \"class\": \"Illuminate\\\\Container\\\\BoundMethod\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Console\\\\Command.php\",\n            \"line\": 183,\n            \"function\": \"call\",\n            \"class\": \"Illuminate\\\\Container\\\\Container\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\symfony\\\\console\\\\Command\\\\Command.php\",\n            \"line\": 326,\n            \"function\": \"execute\",\n            \"class\": \"Illuminate\\\\Console\\\\Command\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Console\\\\Command.php\",\n            \"line\": 152,\n            \"function\": \"run\",\n            \"class\": \"Symfony\\\\Component\\\\Console\\\\Command\\\\Command\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\symfony\\\\console\\\\Application.php\",\n            \"line\": 1063,\n            \"function\": \"run\",\n            \"class\": \"Illuminate\\\\Console\\\\Command\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\symfony\\\\console\\\\Application.php\",\n            \"line\": 320,\n            \"function\": \"doRunCommand\",\n            \"class\": \"Symfony\\\\Component\\\\Console\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\symfony\\\\console\\\\Application.php\",\n            \"line\": 174,\n            \"function\": \"doRun\",\n            \"class\": \"Symfony\\\\Component\\\\Console\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Console\\\\Application.php\",\n            \"line\": 102,\n            \"function\": \"run\",\n            \"class\": \"Symfony\\\\Component\\\\Console\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Console\\\\Kernel.php\",\n            \"line\": 155,\n            \"function\": \"run\",\n            \"class\": \"Illuminate\\\\Console\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\artisan\",\n            \"line\": 35,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Console\\\\Kernel\",\n            \"type\": \"->\"\n        }\n    ]\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
                     "name": "Update the specified Fiche in storage.",
                     "request": {
                         "url": {
@@ -59,7 +227,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "necessitatibus",
+                                    "value": "quis",
                                     "description": "The ID of the fich."
                                 }
                             ]
@@ -95,7 +263,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "in",
+                                    "value": "ipsam",
                                     "description": "The ID of the fich."
                                 }
                             ]
@@ -118,6 +286,62 @@
                         }
                     },
                     "response": []
+                },
+                {
+                    "name": "Display a listing of the portfolios.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/portfolios",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/portfolios"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "GET|HEAD \/portfolios",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "57"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"success\":true,\"data\":[{\"idPortfolio\":1,\"contrat\":\"razer\",\"date_contrat\":\"2023-07-10T00:00:00.000000Z\",\"kbis\":\"zaeeza\",\"autre_fichier\":\"aze\",\"trigger\":0,\"created_at\":\"2023-02-01T23:39:53.000000Z\",\"updated_at\":\"2023-02-08T23:39:53.000000Z\"},{\"idPortfolio\":352,\"contrat\":\"razer\",\"date_contrat\":\"2023-07-10T00:00:00.000000Z\",\"kbis\":\"zaeeza\",\"autre_fichier\":\"aze\",\"trigger\":0,\"created_at\":\"2023-02-01T23:39:53.000000Z\",\"updated_at\":\"2023-02-08T23:39:53.000000Z\"}],\"message\":\"Portfolios retrieved successfully\"}",
+                            "name": ""
+                        }
+                    ]
                 },
                 {
                     "name": "Store a newly created portfolio in storage.",
@@ -148,6 +372,70 @@
                     "response": []
                 },
                 {
+                    "name": "Display the specified portfolio.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/portfolios\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/portfolios\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "12",
+                                    "description": "The ID of the portfolio."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "GET|HEAD \/portfolios\/{id}",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "56"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 500,
+                            "body": "{\n    \"message\": \"SQLSTATE[42S22]: Column not found: 1054 Unknown column 'portfolios.id' in 'where clause' (SQL: select * from `portfolios` where `portfolios`.`id` = 12 limit 1)\",\n    \"exception\": \"Illuminate\\\\Database\\\\QueryException\",\n    \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Database\\\\Connection.php\",\n    \"line\": 760,\n    \"trace\": [\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Database\\\\Connection.php\",\n            \"line\": 720,\n            \"function\": \"runQueryCallback\",\n            \"class\": \"Illuminate\\\\Database\\\\Connection\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Database\\\\Connection.php\",\n            \"line\": 405,\n            \"function\": \"run\",\n            \"class\": \"Illuminate\\\\Database\\\\Connection\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Database\\\\Query\\\\Builder.php\",\n            \"line\": 2705,\n            \"function\": \"select\",\n            \"class\": \"Illuminate\\\\Database\\\\Connection\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Database\\\\Query\\\\Builder.php\",\n            \"line\": 2694,\n            \"function\": \"runSelect\",\n            \"class\": \"Illuminate\\\\Database\\\\Query\\\\Builder\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Database\\\\Query\\\\Builder.php\",\n            \"line\": 3230,\n            \"function\": \"Illuminate\\\\Database\\\\Query\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Database\\\\Query\\\\Builder\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Database\\\\Query\\\\Builder.php\",\n            \"line\": 2693,\n            \"function\": \"onceWithColumns\",\n            \"class\": \"Illuminate\\\\Database\\\\Query\\\\Builder\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Database\\\\Eloquent\\\\Builder.php\",\n            \"line\": 710,\n            \"function\": \"get\",\n            \"class\": \"Illuminate\\\\Database\\\\Query\\\\Builder\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Database\\\\Eloquent\\\\Builder.php\",\n            \"line\": 694,\n            \"function\": \"getModels\",\n            \"class\": \"Illuminate\\\\Database\\\\Eloquent\\\\Builder\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Database\\\\Concerns\\\\BuildsQueries.php\",\n            \"line\": 296,\n            \"function\": \"get\",\n            \"class\": \"Illuminate\\\\Database\\\\Eloquent\\\\Builder\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Database\\\\Eloquent\\\\Builder.php\",\n            \"line\": 442,\n            \"function\": \"first\",\n            \"class\": \"Illuminate\\\\Database\\\\Eloquent\\\\Builder\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\app\\\\Repositories\\\\BaseRepository.php\",\n            \"line\": 121,\n            \"function\": \"find\",\n            \"class\": \"Illuminate\\\\Database\\\\Eloquent\\\\Builder\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\app\\\\Http\\\\Controllers\\\\API\\\\portfolioAPIController.php\",\n            \"line\": 65,\n            \"function\": \"find\",\n            \"class\": \"App\\\\Repositories\\\\BaseRepository\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Controller.php\",\n            \"line\": 54,\n            \"function\": \"show\",\n            \"class\": \"App\\\\Http\\\\Controllers\\\\API\\\\portfolioAPIController\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\ControllerDispatcher.php\",\n            \"line\": 43,\n            \"function\": \"callAction\",\n            \"class\": \"Illuminate\\\\Routing\\\\Controller\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Route.php\",\n            \"line\": 259,\n            \"function\": \"dispatch\",\n            \"class\": \"Illuminate\\\\Routing\\\\ControllerDispatcher\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Route.php\",\n            \"line\": 205,\n            \"function\": \"runController\",\n            \"class\": \"Illuminate\\\\Routing\\\\Route\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",\n            \"line\": 798,\n            \"function\": \"run\",\n            \"class\": \"Illuminate\\\\Routing\\\\Route\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 141,\n            \"function\": \"Illuminate\\\\Routing\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Middleware\\\\SubstituteBindings.php\",\n            \"line\": 50,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 180,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Routing\\\\Middleware\\\\SubstituteBindings\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests.php\",\n            \"line\": 126,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests.php\",\n            \"line\": 92,\n            \"function\": \"handleRequest\",\n            \"class\": \"Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests.php\",\n            \"line\": 54,\n            \"function\": \"handleRequestUsingNamedLimiter\",\n            \"class\": \"Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 180,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 116,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",\n            \"line\": 797,\n            \"function\": \"then\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",\n            \"line\": 776,\n            \"function\": \"runRouteWithinStack\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",\n            \"line\": 740,\n            \"function\": \"runRoute\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",\n            \"line\": 729,\n            \"function\": \"dispatchToRoute\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Kernel.php\",\n            \"line\": 190,\n            \"function\": \"dispatch\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 141,\n            \"function\": \"Illuminate\\\\Foundation\\\\Http\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\livewire\\\\livewire\\\\src\\\\DisableBrowserCache.php\",\n            \"line\": 19,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 180,\n            \"function\": \"handle\",\n            \"class\": \"Livewire\\\\DisableBrowserCache\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest.php\",\n            \"line\": 21,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\ConvertEmptyStringsToNull.php\",\n            \"line\": 31,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 180,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\ConvertEmptyStringsToNull\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest.php\",\n            \"line\": 21,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TrimStrings.php\",\n            \"line\": 40,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 180,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TrimStrings\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\ValidatePostSize.php\",\n            \"line\": 27,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 180,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\ValidatePostSize\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\PreventRequestsDuringMaintenance.php\",\n            \"line\": 86,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 180,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\PreventRequestsDuringMaintenance\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Http\\\\Middleware\\\\HandleCors.php\",\n            \"line\": 62,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 180,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Http\\\\Middleware\\\\HandleCors\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Http\\\\Middleware\\\\TrustProxies.php\",\n            \"line\": 39,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 180,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Http\\\\Middleware\\\\TrustProxies\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 116,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Kernel.php\",\n            \"line\": 165,\n            \"function\": \"then\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Kernel.php\",\n            \"line\": 134,\n            \"function\": \"sendRequestThroughRouter\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls.php\",\n            \"line\": 299,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls.php\",\n            \"line\": 287,\n            \"function\": \"callLaravelOrLumenRoute\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls.php\",\n            \"line\": 92,\n            \"function\": \"makeApiCall\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls.php\",\n            \"line\": 45,\n            \"function\": \"makeResponseCall\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls.php\",\n            \"line\": 35,\n            \"function\": \"makeResponseCallIfConditionsPass\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\Extracting\\\\Extractor.php\",\n            \"line\": 209,\n            \"function\": \"__invoke\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\Extracting\\\\Extractor.php\",\n            \"line\": 163,\n            \"function\": \"iterateThroughStrategies\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Extractor\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\Extracting\\\\Extractor.php\",\n            \"line\": 95,\n            \"function\": \"fetchResponses\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Extractor\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\GroupedEndpoints\\\\GroupedEndpointsFromApp.php\",\n            \"line\": 124,\n            \"function\": \"processRoute\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Extractor\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\GroupedEndpoints\\\\GroupedEndpointsFromApp.php\",\n            \"line\": 71,\n            \"function\": \"extractEndpointsInfoFromLaravelApp\",\n            \"class\": \"Knuckles\\\\Scribe\\\\GroupedEndpoints\\\\GroupedEndpointsFromApp\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\GroupedEndpoints\\\\GroupedEndpointsFromApp.php\",\n            \"line\": 49,\n            \"function\": \"extractEndpointsInfoAndWriteToDisk\",\n            \"class\": \"Knuckles\\\\Scribe\\\\GroupedEndpoints\\\\GroupedEndpointsFromApp\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\Commands\\\\GenerateDocumentation.php\",\n            \"line\": 51,\n            \"function\": \"get\",\n            \"class\": \"Knuckles\\\\Scribe\\\\GroupedEndpoints\\\\GroupedEndpointsFromApp\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Container\\\\BoundMethod.php\",\n            \"line\": 36,\n            \"function\": \"handle\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Commands\\\\GenerateDocumentation\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Container\\\\Util.php\",\n            \"line\": 41,\n            \"function\": \"Illuminate\\\\Container\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Container\\\\BoundMethod\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Container\\\\BoundMethod.php\",\n            \"line\": 93,\n            \"function\": \"unwrapIfClosure\",\n            \"class\": \"Illuminate\\\\Container\\\\Util\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Container\\\\BoundMethod.php\",\n            \"line\": 35,\n            \"function\": \"callBoundMethod\",\n            \"class\": \"Illuminate\\\\Container\\\\BoundMethod\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Container\\\\Container.php\",\n            \"line\": 661,\n            \"function\": \"call\",\n            \"class\": \"Illuminate\\\\Container\\\\BoundMethod\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Console\\\\Command.php\",\n            \"line\": 183,\n            \"function\": \"call\",\n            \"class\": \"Illuminate\\\\Container\\\\Container\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\symfony\\\\console\\\\Command\\\\Command.php\",\n            \"line\": 326,\n            \"function\": \"execute\",\n            \"class\": \"Illuminate\\\\Console\\\\Command\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Console\\\\Command.php\",\n            \"line\": 152,\n            \"function\": \"run\",\n            \"class\": \"Symfony\\\\Component\\\\Console\\\\Command\\\\Command\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\symfony\\\\console\\\\Application.php\",\n            \"line\": 1063,\n            \"function\": \"run\",\n            \"class\": \"Illuminate\\\\Console\\\\Command\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\symfony\\\\console\\\\Application.php\",\n            \"line\": 320,\n            \"function\": \"doRunCommand\",\n            \"class\": \"Symfony\\\\Component\\\\Console\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\symfony\\\\console\\\\Application.php\",\n            \"line\": 174,\n            \"function\": \"doRun\",\n            \"class\": \"Symfony\\\\Component\\\\Console\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Console\\\\Application.php\",\n            \"line\": 102,\n            \"function\": \"run\",\n            \"class\": \"Symfony\\\\Component\\\\Console\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Console\\\\Kernel.php\",\n            \"line\": 155,\n            \"function\": \"run\",\n            \"class\": \"Illuminate\\\\Console\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\artisan\",\n            \"line\": 35,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Console\\\\Kernel\",\n            \"type\": \"->\"\n        }\n    ]\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
                     "name": "Update the specified portfolio in storage.",
                     "request": {
                         "url": {
@@ -159,7 +447,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "11",
+                                    "value": "12",
                                     "description": "The ID of the portfolio."
                                 }
                             ]
@@ -195,7 +483,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "3",
+                                    "value": "9",
                                     "description": "The ID of the portfolio."
                                 }
                             ]
@@ -220,6 +508,62 @@
                     "response": []
                 },
                 {
+                    "name": "Display a listing of the CMKS.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/cmk",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/cmk"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "GET|HEAD \/c-m-k-s",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "55"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"success\":true,\"data\":[],\"message\":\"C M K S retrieved successfully\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
                     "name": "Store a newly created CMK in storage.",
                     "request": {
                         "url": {
@@ -241,7 +585,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"CMK_ID\":\"reiciendis\"}"
+                            "raw": "{\"CMK_ID\":\"minus\"}"
                         },
                         "description": "POST \/c-m-k-s",
                         "auth": {
@@ -249,6 +593,70 @@
                         }
                     },
                     "response": []
+                },
+                {
+                    "name": "Display the specified CMK.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/cmk\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/cmk\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "16",
+                                    "description": "The ID of the cmk."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "GET|HEAD \/c-m-k-s\/{id}",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "54"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 500,
+                            "body": "{\n    \"message\": \"SQLSTATE[42S22]: Column not found: 1054 Unknown column 'facturations.idCMK' in 'where clause' (SQL: select * from `facturations` where `facturations`.`idCMK` = 16 and `facturations`.`deleted_at` is null limit 1)\",\n    \"exception\": \"Illuminate\\\\Database\\\\QueryException\",\n    \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Database\\\\Connection.php\",\n    \"line\": 760,\n    \"trace\": [\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Database\\\\Connection.php\",\n            \"line\": 720,\n            \"function\": \"runQueryCallback\",\n            \"class\": \"Illuminate\\\\Database\\\\Connection\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Database\\\\Connection.php\",\n            \"line\": 405,\n            \"function\": \"run\",\n            \"class\": \"Illuminate\\\\Database\\\\Connection\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Database\\\\Query\\\\Builder.php\",\n            \"line\": 2705,\n            \"function\": \"select\",\n            \"class\": \"Illuminate\\\\Database\\\\Connection\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Database\\\\Query\\\\Builder.php\",\n            \"line\": 2694,\n            \"function\": \"runSelect\",\n            \"class\": \"Illuminate\\\\Database\\\\Query\\\\Builder\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Database\\\\Query\\\\Builder.php\",\n            \"line\": 3230,\n            \"function\": \"Illuminate\\\\Database\\\\Query\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Database\\\\Query\\\\Builder\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Database\\\\Query\\\\Builder.php\",\n            \"line\": 2693,\n            \"function\": \"onceWithColumns\",\n            \"class\": \"Illuminate\\\\Database\\\\Query\\\\Builder\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Database\\\\Eloquent\\\\Builder.php\",\n            \"line\": 710,\n            \"function\": \"get\",\n            \"class\": \"Illuminate\\\\Database\\\\Query\\\\Builder\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Database\\\\Eloquent\\\\Builder.php\",\n            \"line\": 694,\n            \"function\": \"getModels\",\n            \"class\": \"Illuminate\\\\Database\\\\Eloquent\\\\Builder\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Database\\\\Concerns\\\\BuildsQueries.php\",\n            \"line\": 296,\n            \"function\": \"get\",\n            \"class\": \"Illuminate\\\\Database\\\\Eloquent\\\\Builder\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Database\\\\Eloquent\\\\Builder.php\",\n            \"line\": 442,\n            \"function\": \"first\",\n            \"class\": \"Illuminate\\\\Database\\\\Eloquent\\\\Builder\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\app\\\\Repositories\\\\BaseRepository.php\",\n            \"line\": 121,\n            \"function\": \"find\",\n            \"class\": \"Illuminate\\\\Database\\\\Eloquent\\\\Builder\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\app\\\\Http\\\\Controllers\\\\API\\\\CMKAPIController.php\",\n            \"line\": 60,\n            \"function\": \"find\",\n            \"class\": \"App\\\\Repositories\\\\BaseRepository\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Controller.php\",\n            \"line\": 54,\n            \"function\": \"show\",\n            \"class\": \"App\\\\Http\\\\Controllers\\\\API\\\\CMKAPIController\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\ControllerDispatcher.php\",\n            \"line\": 43,\n            \"function\": \"callAction\",\n            \"class\": \"Illuminate\\\\Routing\\\\Controller\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Route.php\",\n            \"line\": 259,\n            \"function\": \"dispatch\",\n            \"class\": \"Illuminate\\\\Routing\\\\ControllerDispatcher\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Route.php\",\n            \"line\": 205,\n            \"function\": \"runController\",\n            \"class\": \"Illuminate\\\\Routing\\\\Route\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",\n            \"line\": 798,\n            \"function\": \"run\",\n            \"class\": \"Illuminate\\\\Routing\\\\Route\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 141,\n            \"function\": \"Illuminate\\\\Routing\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Middleware\\\\SubstituteBindings.php\",\n            \"line\": 50,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 180,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Routing\\\\Middleware\\\\SubstituteBindings\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests.php\",\n            \"line\": 126,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests.php\",\n            \"line\": 92,\n            \"function\": \"handleRequest\",\n            \"class\": \"Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests.php\",\n            \"line\": 54,\n            \"function\": \"handleRequestUsingNamedLimiter\",\n            \"class\": \"Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 180,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 116,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",\n            \"line\": 797,\n            \"function\": \"then\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",\n            \"line\": 776,\n            \"function\": \"runRouteWithinStack\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",\n            \"line\": 740,\n            \"function\": \"runRoute\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",\n            \"line\": 729,\n            \"function\": \"dispatchToRoute\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Kernel.php\",\n            \"line\": 190,\n            \"function\": \"dispatch\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 141,\n            \"function\": \"Illuminate\\\\Foundation\\\\Http\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\livewire\\\\livewire\\\\src\\\\DisableBrowserCache.php\",\n            \"line\": 19,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 180,\n            \"function\": \"handle\",\n            \"class\": \"Livewire\\\\DisableBrowserCache\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest.php\",\n            \"line\": 21,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\ConvertEmptyStringsToNull.php\",\n            \"line\": 31,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 180,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\ConvertEmptyStringsToNull\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest.php\",\n            \"line\": 21,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TrimStrings.php\",\n            \"line\": 40,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 180,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TrimStrings\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\ValidatePostSize.php\",\n            \"line\": 27,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 180,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\ValidatePostSize\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\PreventRequestsDuringMaintenance.php\",\n            \"line\": 86,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 180,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\PreventRequestsDuringMaintenance\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Http\\\\Middleware\\\\HandleCors.php\",\n            \"line\": 62,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 180,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Http\\\\Middleware\\\\HandleCors\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Http\\\\Middleware\\\\TrustProxies.php\",\n            \"line\": 39,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 180,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Http\\\\Middleware\\\\TrustProxies\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 116,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Kernel.php\",\n            \"line\": 165,\n            \"function\": \"then\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Kernel.php\",\n            \"line\": 134,\n            \"function\": \"sendRequestThroughRouter\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls.php\",\n            \"line\": 299,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls.php\",\n            \"line\": 287,\n            \"function\": \"callLaravelOrLumenRoute\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls.php\",\n            \"line\": 92,\n            \"function\": \"makeApiCall\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls.php\",\n            \"line\": 45,\n            \"function\": \"makeResponseCall\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls.php\",\n            \"line\": 35,\n            \"function\": \"makeResponseCallIfConditionsPass\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\Extracting\\\\Extractor.php\",\n            \"line\": 209,\n            \"function\": \"__invoke\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\Extracting\\\\Extractor.php\",\n            \"line\": 163,\n            \"function\": \"iterateThroughStrategies\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Extractor\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\Extracting\\\\Extractor.php\",\n            \"line\": 95,\n            \"function\": \"fetchResponses\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Extractor\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\GroupedEndpoints\\\\GroupedEndpointsFromApp.php\",\n            \"line\": 124,\n            \"function\": \"processRoute\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Extractor\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\GroupedEndpoints\\\\GroupedEndpointsFromApp.php\",\n            \"line\": 71,\n            \"function\": \"extractEndpointsInfoFromLaravelApp\",\n            \"class\": \"Knuckles\\\\Scribe\\\\GroupedEndpoints\\\\GroupedEndpointsFromApp\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\GroupedEndpoints\\\\GroupedEndpointsFromApp.php\",\n            \"line\": 49,\n            \"function\": \"extractEndpointsInfoAndWriteToDisk\",\n            \"class\": \"Knuckles\\\\Scribe\\\\GroupedEndpoints\\\\GroupedEndpointsFromApp\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\Commands\\\\GenerateDocumentation.php\",\n            \"line\": 51,\n            \"function\": \"get\",\n            \"class\": \"Knuckles\\\\Scribe\\\\GroupedEndpoints\\\\GroupedEndpointsFromApp\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Container\\\\BoundMethod.php\",\n            \"line\": 36,\n            \"function\": \"handle\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Commands\\\\GenerateDocumentation\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Container\\\\Util.php\",\n            \"line\": 41,\n            \"function\": \"Illuminate\\\\Container\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Container\\\\BoundMethod\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Container\\\\BoundMethod.php\",\n            \"line\": 93,\n            \"function\": \"unwrapIfClosure\",\n            \"class\": \"Illuminate\\\\Container\\\\Util\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Container\\\\BoundMethod.php\",\n            \"line\": 35,\n            \"function\": \"callBoundMethod\",\n            \"class\": \"Illuminate\\\\Container\\\\BoundMethod\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Container\\\\Container.php\",\n            \"line\": 661,\n            \"function\": \"call\",\n            \"class\": \"Illuminate\\\\Container\\\\BoundMethod\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Console\\\\Command.php\",\n            \"line\": 183,\n            \"function\": \"call\",\n            \"class\": \"Illuminate\\\\Container\\\\Container\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\symfony\\\\console\\\\Command\\\\Command.php\",\n            \"line\": 326,\n            \"function\": \"execute\",\n            \"class\": \"Illuminate\\\\Console\\\\Command\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Console\\\\Command.php\",\n            \"line\": 152,\n            \"function\": \"run\",\n            \"class\": \"Symfony\\\\Component\\\\Console\\\\Command\\\\Command\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\symfony\\\\console\\\\Application.php\",\n            \"line\": 1063,\n            \"function\": \"run\",\n            \"class\": \"Illuminate\\\\Console\\\\Command\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\symfony\\\\console\\\\Application.php\",\n            \"line\": 320,\n            \"function\": \"doRunCommand\",\n            \"class\": \"Symfony\\\\Component\\\\Console\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\symfony\\\\console\\\\Application.php\",\n            \"line\": 174,\n            \"function\": \"doRun\",\n            \"class\": \"Symfony\\\\Component\\\\Console\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Console\\\\Application.php\",\n            \"line\": 102,\n            \"function\": \"run\",\n            \"class\": \"Symfony\\\\Component\\\\Console\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Console\\\\Kernel.php\",\n            \"line\": 155,\n            \"function\": \"run\",\n            \"class\": \"Illuminate\\\\Console\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\artisan\",\n            \"line\": 35,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Console\\\\Kernel\",\n            \"type\": \"->\"\n        }\n    ]\n}",
+                            "name": ""
+                        }
+                    ]
                 },
                 {
                     "name": "Update the specified CMK in storage.",
@@ -280,7 +688,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"CMK_ID\":\"eum\"}"
+                            "raw": "{\"CMK_ID\":\"reiciendis\"}"
                         },
                         "description": "PUT\/PATCH \/c-m-k-s\/{id}",
                         "auth": {
@@ -301,7 +709,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "5",
+                                    "value": "20",
                                     "description": "The ID of the cmk."
                                 }
                             ]
@@ -324,6 +732,62 @@
                         }
                     },
                     "response": []
+                },
+                {
+                    "name": "Display a listing of the Connexions.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/connexions",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/connexions"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "GET|HEAD \/connexions",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "53"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"success\":true,\"data\":[{\"id\":2,\"TYPE_HEBERGEMENT\":\"CLOUD\",\"ONPREMISE_CASE\":\"VPN\",\"STATUS\":0,\"name\":\"comunik\",\"domain\":\"crm\",\"port\":8000,\"link\":\"127.0.0.1:8000\",\"ip_wan\":\"127.0.0.1\",\"ip_lan\":\"127.0.0.1\",\"filebat\":null,\"Parametre\":null,\"username\":\"ohzed\",\"password\":\"6513555\",\"rememberToken\":\"zvzeczvzvzdfzdfaef6+e15fa6e1f65zf\",\"created_at\":\"2023-07-10T11:48:59.000000Z\",\"updated_at\":\"2023-07-14T11:48:59.000000Z\"},{\"id\":3,\"TYPE_HEBERGEMENT\":\"ONPREMISE\",\"ONPREMISE_CASE\":\"\",\"STATUS\":1,\"name\":\"example1\",\"domain\":\"example.com\",\"port\":8080,\"link\":\"http:\\\/\\\/example.com\",\"ip_wan\":\"192.168.1.100\",\"ip_lan\":\"10.0.0.1\",\"filebat\":null,\"Parametre\":null,\"username\":\"user1\",\"password\":\"pass123\",\"rememberToken\":\"abc123def456\",\"created_at\":\"2023-07-05T09:30:00.000000Z\",\"updated_at\":\"2023-07-05T09:30:00.000000Z\"},{\"id\":4,\"TYPE_HEBERGEMENT\":\"CLOUD\",\"ONPREMISE_CASE\":\"VPN\",\"STATUS\":0,\"name\":\"example2\",\"domain\":\"example.org\",\"port\":443,\"link\":\"https:\\\/\\\/example.org\",\"ip_wan\":\"203.0.113.10\",\"ip_lan\":\"172.16.0.1\",\"filebat\":null,\"Parametre\":null,\"username\":\"user2\",\"password\":\"pass456\",\"rememberToken\":\"def456abc789\",\"created_at\":\"2023-07-05T10:45:00.000000Z\",\"updated_at\":\"2023-07-05T10:45:00.000000Z\"},{\"id\":5,\"TYPE_HEBERGEMENT\":\"ONPREMISE\",\"ONPREMISE_CASE\":\"\",\"STATUS\":1,\"name\":\"example3\",\"domain\":\"example.net\",\"port\":8080,\"link\":\"http:\\\/\\\/example.net\",\"ip_wan\":\"192.168.0.50\",\"ip_lan\":\"10.0.0.5\",\"filebat\":null,\"Parametre\":null,\"username\":\"user3\",\"password\":\"pass789\",\"rememberToken\":\"ghi789jkl012\",\"created_at\":\"2023-07-05T12:15:00.000000Z\",\"updated_at\":\"2023-07-05T12:15:00.000000Z\"},{\"id\":6,\"TYPE_HEBERGEMENT\":\"CLOUD\",\"ONPREMISE_CASE\":\"VPN\",\"STATUS\":0,\"name\":\"example4\",\"domain\":\"example.co\",\"port\":8000,\"link\":\"http:\\\/\\\/example.co\",\"ip_wan\":\"198.51.100.20\",\"ip_lan\":\"172.16.0.10\",\"filebat\":null,\"Parametre\":null,\"username\":\"user4\",\"password\":\"pass012\",\"rememberToken\":\"jkl012mno345\",\"created_at\":\"2023-07-05T13:45:00.000000Z\",\"updated_at\":\"2023-07-05T13:45:00.000000Z\"},{\"id\":7,\"TYPE_HEBERGEMENT\":\"ONPREMISE\",\"ONPREMISE_CASE\":\"\",\"STATUS\":1,\"name\":\"example5\",\"domain\":\"example.xyz\",\"port\":8080,\"link\":\"http:\\\/\\\/example.xyz\",\"ip_wan\":\"192.168.1.200\",\"ip_lan\":\"10.0.0.15\",\"filebat\":null,\"Parametre\":null,\"username\":\"user5\",\"password\":\"pass345\",\"rememberToken\":\"mno345pqr678\",\"created_at\":\"2023-07-05T15:00:00.000000Z\",\"updated_at\":\"2023-07-05T15:00:00.000000Z\"},{\"id\":8,\"TYPE_HEBERGEMENT\":\"CLOUD\",\"ONPREMISE_CASE\":\"VPN\",\"STATUS\":0,\"name\":\"example6\",\"domain\":\"example.io\",\"port\":443,\"link\":\"https:\\\/\\\/example.io\",\"ip_wan\":\"203.0.113.50\",\"ip_lan\":\"172.16.0.20\",\"filebat\":null,\"Parametre\":null,\"username\":\"user6\",\"password\":\"pass678\",\"rememberToken\":\"pqr678stu901\",\"created_at\":\"2023-07-05T16:30:00.000000Z\",\"updated_at\":\"2023-07-05T16:30:00.000000Z\"},{\"id\":9,\"TYPE_HEBERGEMENT\":\"ONPREMISE\",\"ONPREMISE_CASE\":\"\",\"STATUS\":1,\"name\":\"example7\",\"domain\":\"example.us\",\"port\":8080,\"link\":\"http:\\\/\\\/example.us\",\"ip_wan\":\"192.168.0.100\",\"ip_lan\":\"10.0.0.25\",\"filebat\":null,\"Parametre\":null,\"username\":\"user7\",\"password\":\"pass901\",\"rememberToken\":\"stu901vwx234\",\"created_at\":\"2023-07-05T18:00:00.000000Z\",\"updated_at\":\"2023-07-05T18:00:00.000000Z\"},{\"id\":10,\"TYPE_HEBERGEMENT\":\"CLOUD\",\"ONPREMISE_CASE\":\"VPN\",\"STATUS\":0,\"name\":\"example8\",\"domain\":\"example.co.uk\",\"port\":8000,\"link\":\"http:\\\/\\\/example.co.uk\",\"ip_wan\":\"198.51.100.100\",\"ip_lan\":\"172.16.0.30\",\"filebat\":null,\"Parametre\":null,\"username\":\"user8\",\"password\":\"pass234\",\"rememberToken\":\"vwx234yz012\",\"created_at\":\"2023-07-05T19:30:00.000000Z\",\"updated_at\":\"2023-07-05T19:30:00.000000Z\"},{\"id\":27,\"TYPE_HEBERGEMENT\":\"ONPREMISE\",\"ONPREMISE_CASE\":\"\",\"STATUS\":1,\"name\":\"example3\",\"domain\":\"example.net\",\"port\":8080,\"link\":\"http:\\\/\\\/example.net\",\"ip_wan\":\"192.168.0.50\",\"ip_lan\":\"10.0.0.5\",\"filebat\":null,\"Parametre\":null,\"username\":\"user3\",\"password\":\"pass789\",\"rememberToken\":\"ghi789jkl012\",\"created_at\":\"2023-07-05T12:15:00.000000Z\",\"updated_at\":\"2023-07-05T12:15:00.000000Z\"},{\"id\":62,\"TYPE_HEBERGEMENT\":\"ONPREMISE\",\"ONPREMISE_CASE\":\"\",\"STATUS\":1,\"name\":\"example1\",\"domain\":\"example.com\",\"port\":8080,\"link\":\"http:\\\/\\\/example.com\",\"ip_wan\":\"192.168.1.100\",\"ip_lan\":\"10.0.0.1\",\"filebat\":null,\"Parametre\":null,\"username\":\"user1\",\"password\":\"pass123\",\"rememberToken\":\"abc123def456\",\"created_at\":\"2023-07-05T09:30:00.000000Z\",\"updated_at\":\"2023-07-05T09:30:00.000000Z\"},{\"id\":72,\"TYPE_HEBERGEMENT\":\"CLOUD\",\"ONPREMISE_CASE\":\"VPN\",\"STATUS\":0,\"name\":\"example6\",\"domain\":\"example.io\",\"port\":443,\"link\":\"https:\\\/\\\/example.io\",\"ip_wan\":\"203.0.113.50\",\"ip_lan\":\"172.16.0.20\",\"filebat\":null,\"Parametre\":null,\"username\":\"user6\",\"password\":\"pass678\",\"rememberToken\":\"pqr678stu901\",\"created_at\":\"2023-07-05T16:30:00.000000Z\",\"updated_at\":\"2023-07-05T16:30:00.000000Z\"},{\"id\":278,\"TYPE_HEBERGEMENT\":\"CLOUD\",\"ONPREMISE_CASE\":\"VPN\",\"STATUS\":0,\"name\":\"example4\",\"domain\":\"example.co\",\"port\":8000,\"link\":\"http:\\\/\\\/example.co\",\"ip_wan\":\"198.51.100.20\",\"ip_lan\":\"172.16.0.10\",\"filebat\":null,\"Parametre\":null,\"username\":\"user4\",\"password\":\"pass012\",\"rememberToken\":\"jkl012mno345\",\"created_at\":\"2023-07-05T13:45:00.000000Z\",\"updated_at\":\"2023-07-05T13:45:00.000000Z\"},{\"id\":622,\"TYPE_HEBERGEMENT\":\"ONPREMISE\",\"ONPREMISE_CASE\":\"\",\"STATUS\":1,\"name\":\"example1\",\"domain\":\"example.com\",\"port\":8080,\"link\":\"http:\\\/\\\/example.com\",\"ip_wan\":\"192.168.1.100\",\"ip_lan\":\"10.0.0.1\",\"filebat\":null,\"Parametre\":null,\"username\":\"user1\",\"password\":\"pass123\",\"rememberToken\":\"abc123def456\",\"created_at\":\"2023-07-05T09:30:00.000000Z\",\"updated_at\":\"2023-07-05T09:30:00.000000Z\"},{\"id\":2782,\"TYPE_HEBERGEMENT\":\"ONPREMISE\",\"ONPREMISE_CASE\":\"\",\"STATUS\":1,\"name\":\"example5\",\"domain\":\"example.xyz\",\"port\":8080,\"link\":\"http:\\\/\\\/example.xyz\",\"ip_wan\":\"192.168.1.200\",\"ip_lan\":\"10.0.0.15\",\"filebat\":null,\"Parametre\":null,\"username\":\"user5\",\"password\":\"pass345\",\"rememberToken\":\"mno345pqr678\",\"created_at\":\"2023-07-05T15:00:00.000000Z\",\"updated_at\":\"2023-07-05T15:00:00.000000Z\"},{\"id\":5823,\"TYPE_HEBERGEMENT\":\"CLOUD\",\"ONPREMISE_CASE\":\"VPN\",\"STATUS\":0,\"name\":\"example2\",\"domain\":\"example.org\",\"port\":443,\"link\":\"https:\\\/\\\/example.org\",\"ip_wan\":\"203.0.113.10\",\"ip_lan\":\"172.16.0.1\",\"filebat\":null,\"Parametre\":null,\"username\":\"user2\",\"password\":\"pass456\",\"rememberToken\":\"def456abc789\",\"created_at\":\"2023-07-05T10:45:00.000000Z\",\"updated_at\":\"2023-07-05T10:45:00.000000Z\"},{\"id\":6229,\"TYPE_HEBERGEMENT\":\"ONPREMISE\",\"ONPREMISE_CASE\":\"\",\"STATUS\":1,\"name\":\"example1\",\"domain\":\"example.com\",\"port\":8080,\"link\":\"http:\\\/\\\/example.com\",\"ip_wan\":\"192.168.1.100\",\"ip_lan\":\"10.0.0.1\",\"filebat\":null,\"Parametre\":null,\"username\":\"user1\",\"password\":\"pass123\",\"rememberToken\":\"abc123def456\",\"created_at\":\"2023-07-05T09:30:00.000000Z\",\"updated_at\":\"2023-07-05T09:30:00.000000Z\"}],\"message\":\"Connexions retrieved successfully\"}",
+                            "name": ""
+                        }
+                    ]
                 },
                 {
                     "name": "Store a newly created Connexion in storage.",
@@ -354,6 +818,70 @@
                     "response": []
                 },
                 {
+                    "name": "Display the specified Connexion.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/connexions\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/connexions\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "2",
+                                    "description": "The ID of the connexion."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "GET|HEAD \/connexions\/{id}",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "52"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"success\":true,\"data\":{\"id\":2,\"TYPE_HEBERGEMENT\":\"CLOUD\",\"ONPREMISE_CASE\":\"VPN\",\"STATUS\":0,\"name\":\"comunik\",\"domain\":\"crm\",\"port\":8000,\"link\":\"127.0.0.1:8000\",\"ip_wan\":\"127.0.0.1\",\"ip_lan\":\"127.0.0.1\",\"filebat\":null,\"Parametre\":null,\"username\":\"ohzed\",\"password\":\"6513555\",\"rememberToken\":\"zvzeczvzvzdfzdfaef6+e15fa6e1f65zf\",\"created_at\":\"2023-07-10T11:48:59.000000Z\",\"updated_at\":\"2023-07-14T11:48:59.000000Z\"},\"message\":\"Connexion retrieved successfully\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
                     "name": "Update the specified Connexion in storage.",
                     "request": {
                         "url": {
@@ -365,7 +893,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "16",
+                                    "value": "2",
                                     "description": "The ID of the connexion."
                                 }
                             ]
@@ -426,6 +954,62 @@
                     "response": []
                 },
                 {
+                    "name": "Display a listing of the Contacts.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/contacts",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/contacts"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "GET|HEAD \/contacts",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "51"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"success\":true,\"data\":[{\"id\":1,\"nom\":\"John\",\"prenom\":\"Doe\",\"fonction\":\"gerant\",\"tel1\":555,\"tel2\":556,\"email\":\"john.doe@gmail.com\",\"created_at\":\"2023-06-22T12:18:45.000000Z\",\"updated_at\":\"2023-06-22T12:18:45.000000Z\"}],\"message\":\"Contacts retrieved successfully\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
                     "name": "Store a newly created Contact in storage.",
                     "request": {
                         "url": {
@@ -454,6 +1038,70 @@
                     "response": []
                 },
                 {
+                    "name": "Display the specified Contact.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/contacts\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/contacts\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the contact."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "GET|HEAD \/contacts\/{id}",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "50"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"success\":true,\"data\":{\"id\":1,\"nom\":\"John\",\"prenom\":\"Doe\",\"fonction\":\"gerant\",\"tel1\":555,\"tel2\":556,\"email\":\"john.doe@gmail.com\",\"created_at\":\"2023-06-22T12:18:45.000000Z\",\"updated_at\":\"2023-06-22T12:18:45.000000Z\"},\"message\":\"Contact retrieved successfully\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
                     "name": "Update the specified Contact in storage.",
                     "request": {
                         "url": {
@@ -465,7 +1113,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "8",
+                                    "value": "1",
                                     "description": "The ID of the contact."
                                 }
                             ]
@@ -501,7 +1149,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "16",
+                                    "value": "1",
                                     "description": "The ID of the contact."
                                 }
                             ]
@@ -524,6 +1172,62 @@
                         }
                     },
                     "response": []
+                },
+                {
+                    "name": "Display a listing of the Fichiers.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/fichiers",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/fichiers"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "GET|HEAD \/fichiers",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "49"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"success\":true,\"data\":[],\"message\":\"Fichiers retrieved successfully\"}",
+                            "name": ""
+                        }
+                    ]
                 },
                 {
                     "name": "Store a newly created Fichier in storage.",
@@ -554,6 +1258,70 @@
                     "response": []
                 },
                 {
+                    "name": "Display the specified Fichier.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/fichiers\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/fichiers\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "3",
+                                    "description": "The ID of the fichier."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "GET|HEAD \/fichiers\/{id}",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "48"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 500,
+                            "body": "{\n    \"message\": \"SQLSTATE[42S22]: Column not found: 1054 Unknown column 'fichiers.id' in 'where clause' (SQL: select * from `fichiers` where `fichiers`.`id` = 3 limit 1)\",\n    \"exception\": \"Illuminate\\\\Database\\\\QueryException\",\n    \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Database\\\\Connection.php\",\n    \"line\": 760,\n    \"trace\": [\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Database\\\\Connection.php\",\n            \"line\": 720,\n            \"function\": \"runQueryCallback\",\n            \"class\": \"Illuminate\\\\Database\\\\Connection\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Database\\\\Connection.php\",\n            \"line\": 405,\n            \"function\": \"run\",\n            \"class\": \"Illuminate\\\\Database\\\\Connection\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Database\\\\Query\\\\Builder.php\",\n            \"line\": 2705,\n            \"function\": \"select\",\n            \"class\": \"Illuminate\\\\Database\\\\Connection\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Database\\\\Query\\\\Builder.php\",\n            \"line\": 2694,\n            \"function\": \"runSelect\",\n            \"class\": \"Illuminate\\\\Database\\\\Query\\\\Builder\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Database\\\\Query\\\\Builder.php\",\n            \"line\": 3230,\n            \"function\": \"Illuminate\\\\Database\\\\Query\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Database\\\\Query\\\\Builder\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Database\\\\Query\\\\Builder.php\",\n            \"line\": 2693,\n            \"function\": \"onceWithColumns\",\n            \"class\": \"Illuminate\\\\Database\\\\Query\\\\Builder\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Database\\\\Eloquent\\\\Builder.php\",\n            \"line\": 710,\n            \"function\": \"get\",\n            \"class\": \"Illuminate\\\\Database\\\\Query\\\\Builder\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Database\\\\Eloquent\\\\Builder.php\",\n            \"line\": 694,\n            \"function\": \"getModels\",\n            \"class\": \"Illuminate\\\\Database\\\\Eloquent\\\\Builder\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Database\\\\Concerns\\\\BuildsQueries.php\",\n            \"line\": 296,\n            \"function\": \"get\",\n            \"class\": \"Illuminate\\\\Database\\\\Eloquent\\\\Builder\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Database\\\\Eloquent\\\\Builder.php\",\n            \"line\": 442,\n            \"function\": \"first\",\n            \"class\": \"Illuminate\\\\Database\\\\Eloquent\\\\Builder\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\app\\\\Repositories\\\\BaseRepository.php\",\n            \"line\": 121,\n            \"function\": \"find\",\n            \"class\": \"Illuminate\\\\Database\\\\Eloquent\\\\Builder\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\app\\\\Http\\\\Controllers\\\\API\\\\FichierAPIController.php\",\n            \"line\": 61,\n            \"function\": \"find\",\n            \"class\": \"App\\\\Repositories\\\\BaseRepository\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Controller.php\",\n            \"line\": 54,\n            \"function\": \"show\",\n            \"class\": \"App\\\\Http\\\\Controllers\\\\API\\\\FichierAPIController\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\ControllerDispatcher.php\",\n            \"line\": 43,\n            \"function\": \"callAction\",\n            \"class\": \"Illuminate\\\\Routing\\\\Controller\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Route.php\",\n            \"line\": 259,\n            \"function\": \"dispatch\",\n            \"class\": \"Illuminate\\\\Routing\\\\ControllerDispatcher\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Route.php\",\n            \"line\": 205,\n            \"function\": \"runController\",\n            \"class\": \"Illuminate\\\\Routing\\\\Route\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",\n            \"line\": 798,\n            \"function\": \"run\",\n            \"class\": \"Illuminate\\\\Routing\\\\Route\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 141,\n            \"function\": \"Illuminate\\\\Routing\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Middleware\\\\SubstituteBindings.php\",\n            \"line\": 50,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 180,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Routing\\\\Middleware\\\\SubstituteBindings\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests.php\",\n            \"line\": 126,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests.php\",\n            \"line\": 92,\n            \"function\": \"handleRequest\",\n            \"class\": \"Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests.php\",\n            \"line\": 54,\n            \"function\": \"handleRequestUsingNamedLimiter\",\n            \"class\": \"Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 180,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 116,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",\n            \"line\": 797,\n            \"function\": \"then\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",\n            \"line\": 776,\n            \"function\": \"runRouteWithinStack\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",\n            \"line\": 740,\n            \"function\": \"runRoute\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",\n            \"line\": 729,\n            \"function\": \"dispatchToRoute\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Kernel.php\",\n            \"line\": 190,\n            \"function\": \"dispatch\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 141,\n            \"function\": \"Illuminate\\\\Foundation\\\\Http\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\livewire\\\\livewire\\\\src\\\\DisableBrowserCache.php\",\n            \"line\": 19,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 180,\n            \"function\": \"handle\",\n            \"class\": \"Livewire\\\\DisableBrowserCache\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest.php\",\n            \"line\": 21,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\ConvertEmptyStringsToNull.php\",\n            \"line\": 31,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 180,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\ConvertEmptyStringsToNull\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest.php\",\n            \"line\": 21,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TrimStrings.php\",\n            \"line\": 40,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 180,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TrimStrings\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\ValidatePostSize.php\",\n            \"line\": 27,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 180,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\ValidatePostSize\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\PreventRequestsDuringMaintenance.php\",\n            \"line\": 86,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 180,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\PreventRequestsDuringMaintenance\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Http\\\\Middleware\\\\HandleCors.php\",\n            \"line\": 62,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 180,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Http\\\\Middleware\\\\HandleCors\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Http\\\\Middleware\\\\TrustProxies.php\",\n            \"line\": 39,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 180,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Http\\\\Middleware\\\\TrustProxies\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 116,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Kernel.php\",\n            \"line\": 165,\n            \"function\": \"then\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Kernel.php\",\n            \"line\": 134,\n            \"function\": \"sendRequestThroughRouter\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls.php\",\n            \"line\": 299,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls.php\",\n            \"line\": 287,\n            \"function\": \"callLaravelOrLumenRoute\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls.php\",\n            \"line\": 92,\n            \"function\": \"makeApiCall\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls.php\",\n            \"line\": 45,\n            \"function\": \"makeResponseCall\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls.php\",\n            \"line\": 35,\n            \"function\": \"makeResponseCallIfConditionsPass\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\Extracting\\\\Extractor.php\",\n            \"line\": 209,\n            \"function\": \"__invoke\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\Extracting\\\\Extractor.php\",\n            \"line\": 163,\n            \"function\": \"iterateThroughStrategies\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Extractor\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\Extracting\\\\Extractor.php\",\n            \"line\": 95,\n            \"function\": \"fetchResponses\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Extractor\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\GroupedEndpoints\\\\GroupedEndpointsFromApp.php\",\n            \"line\": 124,\n            \"function\": \"processRoute\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Extractor\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\GroupedEndpoints\\\\GroupedEndpointsFromApp.php\",\n            \"line\": 71,\n            \"function\": \"extractEndpointsInfoFromLaravelApp\",\n            \"class\": \"Knuckles\\\\Scribe\\\\GroupedEndpoints\\\\GroupedEndpointsFromApp\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\GroupedEndpoints\\\\GroupedEndpointsFromApp.php\",\n            \"line\": 49,\n            \"function\": \"extractEndpointsInfoAndWriteToDisk\",\n            \"class\": \"Knuckles\\\\Scribe\\\\GroupedEndpoints\\\\GroupedEndpointsFromApp\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\knuckleswtf\\\\scribe\\\\src\\\\Commands\\\\GenerateDocumentation.php\",\n            \"line\": 51,\n            \"function\": \"get\",\n            \"class\": \"Knuckles\\\\Scribe\\\\GroupedEndpoints\\\\GroupedEndpointsFromApp\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Container\\\\BoundMethod.php\",\n            \"line\": 36,\n            \"function\": \"handle\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Commands\\\\GenerateDocumentation\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Container\\\\Util.php\",\n            \"line\": 41,\n            \"function\": \"Illuminate\\\\Container\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Container\\\\BoundMethod\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Container\\\\BoundMethod.php\",\n            \"line\": 93,\n            \"function\": \"unwrapIfClosure\",\n            \"class\": \"Illuminate\\\\Container\\\\Util\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Container\\\\BoundMethod.php\",\n            \"line\": 35,\n            \"function\": \"callBoundMethod\",\n            \"class\": \"Illuminate\\\\Container\\\\BoundMethod\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Container\\\\Container.php\",\n            \"line\": 661,\n            \"function\": \"call\",\n            \"class\": \"Illuminate\\\\Container\\\\BoundMethod\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Console\\\\Command.php\",\n            \"line\": 183,\n            \"function\": \"call\",\n            \"class\": \"Illuminate\\\\Container\\\\Container\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\symfony\\\\console\\\\Command\\\\Command.php\",\n            \"line\": 326,\n            \"function\": \"execute\",\n            \"class\": \"Illuminate\\\\Console\\\\Command\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Console\\\\Command.php\",\n            \"line\": 152,\n            \"function\": \"run\",\n            \"class\": \"Symfony\\\\Component\\\\Console\\\\Command\\\\Command\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\symfony\\\\console\\\\Application.php\",\n            \"line\": 1063,\n            \"function\": \"run\",\n            \"class\": \"Illuminate\\\\Console\\\\Command\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\symfony\\\\console\\\\Application.php\",\n            \"line\": 320,\n            \"function\": \"doRunCommand\",\n            \"class\": \"Symfony\\\\Component\\\\Console\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\symfony\\\\console\\\\Application.php\",\n            \"line\": 174,\n            \"function\": \"doRun\",\n            \"class\": \"Symfony\\\\Component\\\\Console\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Console\\\\Application.php\",\n            \"line\": 102,\n            \"function\": \"run\",\n            \"class\": \"Symfony\\\\Component\\\\Console\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Console\\\\Kernel.php\",\n            \"line\": 155,\n            \"function\": \"run\",\n            \"class\": \"Illuminate\\\\Console\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\Users\\\\oussa\\\\OneDrive\\\\Bureau\\\\PFE\\\\Backend\\\\artisan\",\n            \"line\": 35,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Console\\\\Kernel\",\n            \"type\": \"->\"\n        }\n    ]\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
                     "name": "Update the specified Fichier in storage.",
                     "request": {
                         "url": {
@@ -565,7 +1333,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "13",
+                                    "value": "14",
                                     "description": "The ID of the fichier."
                                 }
                             ]
@@ -601,7 +1369,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "18",
+                                    "value": "20",
                                     "description": "The ID of the fichier."
                                 }
                             ]

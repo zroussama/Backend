@@ -1,4 +1,4 @@
-<div class="p-6 lg:p-8 bg-white border-b border-gray-200">
+<div class="p-6 bg-white border-b border-gray-200 lg:p-8">
 
     <!-- component -->
     <link rel="stylesheet" href="https://unpkg.com/flowbite@1.4.4/dist/flowbite.min.css" />
@@ -7,7 +7,7 @@
         <form class="flex items-center">
             <label for="simple-search" class="sr-only">Search</label>
             <div class="relative w-full">
-                <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+                <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                     <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20"
                         xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd"
@@ -15,9 +15,10 @@
                             clip-rule="evenodd"></path>
                     </svg>
                 </div>
-                <input type="text" id="simple-search"
-                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                <div classs="form-group">
+                    <input type="text" id="search" name="search" placeholder="Search" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder="Search" required>
+                </div>
             </div>
             <button type="submit"
                 class="p-2.5 ml-2 text-sm font-medium text-white bg-blue-700 rounded-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"><svg
@@ -27,12 +28,25 @@
                         d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                 </svg></button>
         </form>
-
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.1/bootstrap3-typeahead.min.js"></script>
+        <script type="text/javascript">
+            var route = "{{ url('autocomplete-search') }}";
+            $('#search').typeahead({
+                source: function(query, process) {
+                    return $.get(route, {
+                        query: query
+                    }, function(data) {
+                        return process(data);
+                    });
+                }
+            });
+        </script>
         <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
     </div>
 </div>
 
-<div class="bg-gray-200 bg-opacity-25 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 p-6 lg:p-8 hidden">
+{{-- <div class="grid-cols-1 gap-6 p-6 bg-gray-200 bg-opacity-25 md:grid-cols-2 lg:gap-8 lg:p-8">
     <div>
         <div class="flex items-center">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -44,7 +58,7 @@
                 <a href="https://laravel.com/docs">Historique de recherche</a>
             </h2>
         </div>
-        <ul class="mt-4 text-gray-500 text-sm leading-relaxed">
+        <ul class="mt-4 text-sm leading-relaxed text-gray-500">
             <li class="mb-2">Élément 1</li>
             <li class="mb-2">Élément 2</li>
             <li class="mb-2">Élément 3</li>
@@ -64,12 +78,12 @@
             </h2>
         </div>
 
-        <ul class="mt-4 text-gray-500 text-sm leading-relaxed">
+        <ul class="mt-4 text-sm leading-relaxed text-gray-500">
             <li class="mb-2">Élément 1</li>
             <li class="mb-2">Élément 2</li>
             <li class="mb-2">Élément 3</li>
             <li class="mb-2">Élément 4</li>
         </ul>
 
-    </div>
+    </div> --}}
 </div>

@@ -47,8 +47,6 @@ class FicheController extends AppBaseController
 
         $fiche = $this->ficheRepository->create($input);
 
-        Flash::success('Fiche saved successfully.');
-
         return redirect(route('fiches.index'));
     }
 
@@ -60,7 +58,7 @@ class FicheController extends AppBaseController
         $fiche = $this->ficheRepository->find($id);
 
         if (empty($fiche)) {
-            Flash::error('Fiche not found');
+
 
             return redirect(route('fiches.index'));
         }
@@ -76,7 +74,6 @@ class FicheController extends AppBaseController
         $fiche = $this->ficheRepository->find($id);
 
         if (empty($fiche)) {
-            Flash::error('Fiche not found');
 
             return redirect(route('fiches.index'));
         }
@@ -92,14 +89,14 @@ class FicheController extends AppBaseController
         $fiche = $this->ficheRepository->find($id);
 
         if (empty($fiche)) {
-            Flash::error('Fiche not found');
+
 
             return redirect(route('fiches.index'));
         }
 
         $fiche = $this->ficheRepository->update($request->all(), $id);
 
-        Flash::success('Fiche updated successfully.');
+
 
         return redirect(route('fiches.index'));
     }
@@ -114,14 +111,14 @@ class FicheController extends AppBaseController
         $fiche = $this->ficheRepository->find($id);
 
         if (empty($fiche)) {
-            Flash::error('Fiche not found');
+
 
             return redirect(route('fiches.index'));
         }
 
         $this->ficheRepository->delete($id);
 
-        Flash::success('Fiche deleted successfully.');
+
 
         return redirect(route('fiches.index'));
     }

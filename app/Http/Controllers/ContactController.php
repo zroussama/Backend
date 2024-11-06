@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CreateContactRequest;
 use App\Http\Requests\UpdateContactRequest;
 use App\Http\Controllers\AppBaseController;
+use App\Models\Contact;
+use App\Models\Fiche;
 use App\Repositories\ContactRepository;
 use Illuminate\Http\Request;
 use Flash;
@@ -41,14 +43,21 @@ class ContactController extends AppBaseController
     /**
      * Store a newly created Contact in storage.
      */
-    public function store(CreateContactRequest $request)
+    public function store(Request $request)
     {
-        $input = $request->all();
+        $contact = new Contact([
+            'nom' => $request->input('nom'),
+            'prenom' => $request->input('prenom'),
+            'fonction' => $request->input('fonction'),
+            'tel1' => $request->input('tel1'),
+            'tel2' => $request->input('tel2'),
+            'email' => $request->input('email'),
+        ]);
 
-        $contact = $this->contactRepository->create($input);
+        $fiche = Fiche::find($request->input('fiche_id'));
+        $fiche->contacts()->save($contact);
 
-
-        return redirect(route('contacts.index'));
+        return redirect()->back();
     }
 
     /**

@@ -40,7 +40,7 @@
 
     <div class="card-footer clearfix">
         <div class="float-right">
-            @include('adminlte-templates::common.paginate', ['records' => $portfolios])
+{{-- //Ajax Pagination --}}
         </div>
     </div>
 </div>

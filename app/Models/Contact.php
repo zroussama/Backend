@@ -13,9 +13,8 @@ class Contact extends Model
     }
 
     public $table = 'contacts';
-
     public $fillable = [
-        
+
         'nom',
         'prenom',
         'fonction',
@@ -34,8 +33,8 @@ class Contact extends Model
     ];
 
     public static array $rules = [
-        
+
     ];
 
-    
+
 }

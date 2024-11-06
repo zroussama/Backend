@@ -1,18 +1,17 @@
-
-    <div class="container">
+<div class="container">
         <h1>Résultats de la recherche</h1>
 
         @if (isset($details) && $details->isNotEmpty())
             <p>Résultats pour la recherche : <strong>{{ $query }}</strong></p>
 
             <table>
-                <thead>
-                    <tr>
-                        {{-- <th>ID_CMK</th> --}}
-                        <th>Entreprise</th>
-                        <th>Téléphone</th>
-                        <th>Option</th>
-                        <!-- Ajoutez d'autres colonnes pour les détails spécifiques -->
+                    <thead>
+                        <tr>
+                            {{-- <th>ID_CMK</th> --}}
+                            <th>Entreprise</th>
+                            <th>Téléphone</th>
+                            <th>Option</th>
+                            <!-- Ajoutez d'autres colonnes pour les détails spécifiques -->
                     </tr>
                 </thead>
                 <tbody>
@@ -29,7 +28,7 @@
                 <tfoot>
                     <tr>
                         <td colspan="3">
-                            Found {{count($details)}}
+                            Found {{ count($details) }}
                         </td>
                     </tr>
                 </tfoot>
